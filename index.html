@@ -9,53 +9,31 @@
 </head>
 <body>
 
-<!-- Rotated More Info button on the right edge -->
-<a href="#" id="moreInfoBtn" class="more-info-vertical">More Info</a>
+  <!-- More Info link (top right corner) -->
+  <a href="#" id="moreInfoBtn" class="more-info">More Info</a>
 
-<main>
-  <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
-  <section class="events">
-  <div class="event">
-    <p class="event-date">11.11.24</p>
-    <p class="event-title">STRATA+0.1</p>
-    <p class="event-location">Spanners (London)</p>
-    <p class="event-lineup">Partial Defrag, Ans M, Castle Maol, Veronica+</p>
+  <main>
+    <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
+    <ul>
+      <li><a href="#">link one</a></li>
+      <li><a href="#">link two</a></li>
+      <li><a href="#">link three</a></li>
+    </ul>
+
+    <footer>
+      <p>© 2025, STRATA</p>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">×</button>
+      <h2>More Info</h2>
+      <p>This is some additional information displayed in a modal.</p>
+    </div>
   </div>
 
-  <div class="event">
-    <p class="event-date">6.12.24</p>
-    <p class="event-title">Partial Defrag ScanDisk Launch</p>
-    <p class="event-location">Goldsmiths SpatLab (London) with IKLECTIK</p>
-    <p class="event-lineup">Partial Defrag, Micheal, Isidora Edwards</p>
-  </div>
-
-  <div class="event">
-    <p class="event-date">18.01.25</p>
-    <p class="event-title">Gloves To Boquet's Ettrick Sites Launch</p>
-    <p class="event-location">RCA VisLab (London)</p>
-    <p class="event-lineup">Gloves to Boquet, Castle Maol, Partial Defrag</p>
-  </div>
-</section>
-  <ul>
-    <li><a href="#">link one</a></li>
-    <li><a href="#">link two</a></li>
-    <li><a href="#">link three</a></li>
-  </ul>
-
-  <footer>
-    <p>© 2025, STRATA</p>
-  </footer>
-</main>
-
-<!-- Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal-content">
-    <button class="close-btn" id="closeModal">×</button>
-    <h2>More Info</h2>
-    <p>This is some additional information displayed in a modal.</p>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

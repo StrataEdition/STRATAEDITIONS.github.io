@@ -70,24 +70,26 @@ footer {
   opacity: 0.7;
 }
 
-/* Position More Info link in top right */
-.more-info {
+/* Rotated More Info link */
+.more-info-vertical {
   position: fixed;
-  top: 20px;
-  right: 30px;
+  top: 50%;
+  right: 0;
+  transform: rotate(90deg) translateY(-50%);
+  transform-origin: right center;
   font-size: 1rem;
   color: black;
   text-decoration: none;
   font-weight: 500;
   z-index: 1001;
-  transition: opacity 0.2s ease;
+  padding-right: 1rem;
 }
 
-.more-info:hover {
+.more-info-vertical:hover {
   opacity: 0.6;
 }
 
-/* Modal styling */
+/* Modal overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -101,24 +103,28 @@ footer {
   z-index: 1000;
 }
 
+/* Modal box with black border */
 .modal-content {
   background: white;
   padding: 2rem;
-  border-radius: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
   max-width: 400px;
   text-align: center;
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+/* X close button */
 .close-btn {
   position: absolute;
   top: 0.5rem;
-  right: 1rem;
+  right: 0.75rem;
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   font-weight: bold;
+  color: black;
 }
+
 

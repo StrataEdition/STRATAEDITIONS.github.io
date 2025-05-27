@@ -31,13 +31,25 @@ main {
 }
 
 /* Events */
+/* Events */
 .events {
-  margin-bottom: 3rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  max-width: 600px;
 }
 
 .event {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
+
+.event-info {
+  font-size: 0.9rem;
+  color: #222;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
 
 .event p {
   margin: 0.2rem 0;

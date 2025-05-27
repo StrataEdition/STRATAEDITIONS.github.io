@@ -1,3 +1,8 @@
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Space Grotesk', sans-serif;
   background-color: #f4f4f4;
@@ -5,9 +10,42 @@ body {
   margin: 0;
   padding: 0;
   text-transform: lowercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Event styling like x-l.love */
+/* Centered logo */
+.logo {
+  display: block;
+  margin: 3rem auto 2rem auto;
+  max-width: 200px;
+  height: auto;
+}
+
+/* Nav links */
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 4rem 0;
+  gap: 2.5rem;
+}
+
+ul li a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
+}
+
+ul li a:hover {
+  opacity: 0.6;
+}
+
+/* Events section */
 .events {
   max-width: 600px;
   margin: 3rem auto;
@@ -22,6 +60,7 @@ body {
   margin: 0.2rem 0;
   font-size: 0.9rem;
   color: #333;
+  letter-spacing: 0.05em;
 }
 
 /* Rotated More Info text on the right edge */
@@ -36,10 +75,16 @@ body {
   text-decoration: none;
   font-weight: normal;
   padding-right: 0.25rem;
+  cursor: pointer;
   z-index: 1001;
+  user-select: none;
 }
 
-/* Modal overlay (no shadow) */
+.more-info-vertical:hover {
+  opacity: 0.6;
+}
+
+/* Modal overlay (full screen white with slight transparency) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -53,7 +98,7 @@ body {
   z-index: 1000;
 }
 
-/* Modal box (white box, black border, no shadow) */
+/* Modal box with black border, no shadow */
 .modal-content {
   background: white;
   border: 1px solid black;
@@ -62,9 +107,12 @@ body {
   max-width: 400px;
   text-align: center;
   position: relative;
+  font-size: 1rem;
+  color: black;
+  letter-spacing: 0.05em;
 }
 
-/* Close button “×” styling */
+/* Close button “×” */
 .close-btn {
   position: absolute;
   top: 0.5rem;
@@ -74,4 +122,9 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   color: black;
+  user-select: none;
+  line-height: 1;
+  padding: 0;
 }
+
+/

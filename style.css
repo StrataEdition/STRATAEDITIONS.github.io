@@ -1,144 +1,4 @@
-/* Reset & base styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Space Mono', monospace;
-  background-color: #fff;
-  color: #000;
-  text-transform: lowercase;
-  font-size: 0.8rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Centered logo block in the middle of the page */
-.centered-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* fill the viewport */
-  flex-direction: column;
-}
-
-.logo {
-  max-width: 180px;
-  height: auto;
-  margin-bottom: 2rem;
-}
-
-.events {
-  max-width: 600px; /* Centered container */
-  margin: 2rem auto;
-  padding: 0 1rem;
-  text-align: left;
-}
-
-.event-line {
-  font-family: 'Space Mono', monospace;
-  text-transform: uppercase;
-  font-size: 0.65rem; /* Smaller font */
-  line-height: 1.5;
-  color: #000;
-  margin-bottom: 1rem;
-  letter-spacing: 0.04em;
-}
-
-
-
-/* Nav links */
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-ul li a {
-  color: #000;
-  text-decoration: none;
-  font-size: 0.8rem;
-}
-
-ul li a:hover {
-  opacity: 0.6;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  margin: 3rem 0;
-  font-size: 0.7rem;
-  color: #666;
-}
-
-/* Rotated More Info link */
-.more-info-vertical {
-  position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%) rotate(90deg);
-  transform-origin: right top;
-  font-size: 0.8rem;
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  z-index: 1001;
-  padding: 10px 15px; /* Adjust padding as needed */
-  white-space: nowrap;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: -0.5rem; /* Small adjustment to pull it to the edge */
-}
-
-.more-info-vertical:hover {
-  opacity: 0.6;
-}
-
-/* Modal overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Modal box with black border */
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  max-width: 400px;
-  text-align: center;
-  position: relative;
-}
-
-/* X close button */
-.close-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  font-weight: bold;
-  color: black;
-}
-
-/* Updated Releases CSS */
+/* Releases Section */
 .releases {
   display: flex;
   flex-direction: column;
@@ -155,56 +15,36 @@ footer {
   flex-direction: column;
   align-items: center;
   margin-bottom: 6rem;
-  scroll-margin-top: 2rem; /* Helps with scroll positioning */
-}
-.release:last-child {
-  margin-bottom: 4rem;
 }
 
 .release-cover-container {
   position: relative;
   width: 100%;
-  max-width: 280px;
-  margin: 0 auto;
+  max-width: 340px; /* Slightly larger than before */
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s ease;
 }
 
 .release-cover {
   width: 100%;
-  max-width: 280px;
   height: auto;
-  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-  position: relative;
-  z-index: 1;
-}
-
-.liquify-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.03);
-  border-radius: 50%;
-  scale: 0.9;
-  opacity: 0;
-  filter: blur(8px);
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  z-index: 0;
+  filter: blur(0);
+  transition: filter 0.3s ease;
 }
 
 .release-cover-container:hover .release-cover {
-  transform: scale(0.98);
-  filter: contrast(1.1) saturate(1.1);
+  filter: blur(3px);
 }
 
-.release-cover-container:hover .liquify-effect {
-  scale: 1.2;
-  opacity: 1;
+.release-info {
+  width: 100%;
+  text-align: center;
 }
 
 .release-info h3 {
   font-size: 0.75rem;
-  margin: 1.5rem 0 0.8rem;
+  font-weight: normal;
+  margin: 0 0 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -214,7 +54,8 @@ footer {
   font-style: italic;
   line-height: 1.5;
   margin: 0 auto 1.2rem;
-  max-width: 75%;
+  width: 100%;
+  max-width: 340px; /* Matches cover width */
 }
 
 .review-source {
@@ -234,13 +75,12 @@ footer {
   color: #000;
   text-decoration: none;
   position: relative;
-  padding-bottom: 2px;
 }
 
 .review-link:after, .buy-link:after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -254,16 +94,9 @@ footer {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 @media (max-width: 480px) {
-  .release {
-    margin-bottom: 4rem;
-  }
-  
-  .release-cover {
-    max-width: 220px;
-  }
-  
-  .review-quote {
-    max-width: 90%;
+  .release-cover-container {
+    max-width: 280px;
   }
 }

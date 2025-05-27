@@ -1,61 +1,53 @@
-/* Base styles */
+/* Reset & base styles */
 * {
   box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  background: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: #fff;
   color: #000;
   text-transform: lowercase;
+  font-size: 0.8rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main layout */
-main {
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
-  padding: 0 1rem;
+/* Centered logo block in the middle of the page */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* fill the viewport */
+  flex-direction: column;
 }
 
-/* Logo */
 .logo {
-  display: block;
-  margin: 3rem auto 2rem auto;
-  max-width: 160px;
-  width: 100%;
+  max-width: 180px;
   height: auto;
-  object-fit: contain;
+  margin-bottom: 2rem;
 }
 
-/* Events */
-/* Events */
+/* Events section */
 .events {
-  margin: 4rem auto;
-  padding: 0 1rem;
   max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .event {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .event-info {
-  font-size: 0.9rem;
-  color: #222;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  color: #111;
+  line-height: 1.4;
   letter-spacing: 0.03em;
-  margin: 0;
-}
-
-
-.event p {
   margin: 0.2rem 0;
-  font-size: 0.9rem;
-  color: #333;
-  letter-spacing: 0.05em;
 }
 
 /* Nav links */
@@ -63,21 +55,26 @@ ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 0;
-  margin: 1rem 0 3rem 0;
   gap: 2rem;
+  margin: 2rem 0;
 }
 
 ul li a {
-  color: #222;
+  color: #000;
   text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  transition: opacity 0.3s ease;
+  font-size: 0.8rem;
 }
 
 ul li a:hover {
   opacity: 0.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 0.7rem;
+  color: #666;
 }
 
 /* More Info rotated button */
@@ -87,14 +84,10 @@ ul li a:hover {
   right: 0;
   transform: rotate(90deg) translateY(-50%);
   transform-origin: right center;
-  font-size: 0.9rem;
-  font-weight: 400;
+  font-size: 0.75rem;
   color: black;
-  padding-right: 0.5rem;
-  background: none;
-  border: none;
   text-decoration: none;
-  cursor: pointer;
+  padding-right: 0.25rem;
   z-index: 1001;
 }
 
@@ -105,28 +98,26 @@ ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255, 255, 255, 0.95);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-/* Modal content */
+/* Modal box */
 .modal-content {
   background: white;
   border: 1px solid black;
   padding: 2rem;
-  border-radius: 0;
   max-width: 400px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: black;
-  letter-spacing: 0.05em;
-  box-shadow: none;
+  position: relative;
 }
 
-/* Modal close button */
+/* Close button */
 .close-btn {
   position: absolute;
   top: 0.5rem;
@@ -134,16 +125,6 @@ ul li a:hover {
   background: none;
   border: none;
   font-size: 1.2rem;
-  cursor: pointer;
   color: black;
-  line-height: 1;
-  padding: 0;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #666;
-  margin: 3rem 0 2rem 0;
+  cursor: pointer;
 }

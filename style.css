@@ -81,14 +81,19 @@ footer {
   position: fixed;
   top: 50%;
   right: 0;
-  transform: rotate(90deg) translateY(-50%);
-  transform-origin: right center;
-  font-size: 1rem;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: right top;
+  font-size: 0.8rem;
   color: black;
   text-decoration: none;
   font-weight: 500;
   z-index: 1001;
-  padding-right: 1rem;
+  padding: 10px 15px; /* Adjust padding as needed */
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: -0.5rem; /* Small adjustment to pull it to the edge */
 }
 
 .more-info-vertical:hover {

@@ -1,8 +1,9 @@
 const modal = document.getElementById("modal");
-const openBtn = document.querySelector(".info-btn");
+const openBtn = document.getElementById("moreInfoBtn");
 const closeBtn = document.getElementById("closeModal");
 
-openBtn.addEventListener("click", () => {
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   modal.style.display = "flex";
 });
 

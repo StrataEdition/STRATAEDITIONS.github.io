@@ -1,23 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>x-l clone</title>
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-</head>
 <body>
+
+  <!-- More Info link (top right corner) -->
+  <a href="#" id="moreInfoBtn" class="more-info">More Info</a>
+
   <main>
-    <h1>x-l</h1>
+    <img src="images/strataLogo.png" alt="STRATA logo" class="logo">
     <ul>
       <li><a href="#">link one</a></li>
       <li><a href="#">link two</a></li>
       <li><a href="#">link three</a></li>
     </ul>
+
     <footer>
-      <p>© 2025 x-l</p>
+      <p>© 2025, STRATA</p>
     </footer>
   </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal" style="display: none;">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">×</button>
+      <h2>More Info</h2>
+      <p>This is some additional information displayed in a modal.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+
 </body>
-</html>

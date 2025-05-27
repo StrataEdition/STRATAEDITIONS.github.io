@@ -8,6 +8,13 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+.logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
 
 main {
   text-align: center;

@@ -243,6 +243,12 @@ footer {
   background-position: 0 0.9em; /* Adjust to shift highlight up/down */
   line-height: 1.6;
 }
+.event-line:nth-child(odd) {
+  background-position-y: 0.85em;
+}
+.event-line:nth-child(even) {
+  background-position-y: 0.95em;
+}
 
 
 @media (max-width: 480px) {

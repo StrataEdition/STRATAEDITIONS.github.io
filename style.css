@@ -30,7 +30,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Events section */
+/* Events section - MODIFIED */
 .events {
   max-width: 600px;
   margin: 2rem auto;
@@ -46,6 +46,13 @@ body {
   color: #000;
   margin-bottom: 1rem;
   letter-spacing: 0.04em;
+}
+
+/* Add this new rule to make show titles blue */
+.event-line::after {
+  content: attr(data-title);
+  color: #0066cc; /* Pure blue color */
+  margin-left: 0.5em;
 }
 
 /* Navigation */
@@ -235,25 +242,6 @@ footer {
   transform-origin: left;
 }
 
-.event-title {
-  background-image: linear-gradient(
-    to bottom, 
-    transparent 50%, 
-    rgba(173, 216, 230, 0.5) 50%
-  );
-  background-size: 100% 1.2em;
-  background-repeat: repeat-x;
-  background-position: 0 0.9em;
-  padding: 0 2px;
-}
-
-/* Optional: Add subtle variation */
-.event-line:nth-child(odd) .event-title {
-  background-position-y: 0.85em;
-}
-.event-line:nth-child(even) .event-title {
-  background-position-y: 0.95em;
-}
 
 @media (max-width: 480px) {
   .release-cover-container {

@@ -35,28 +35,48 @@
     </div>
   </div>
 </section>
-
+  
 <!-- Modal Card Structure -->
 <div class="modal-overlay" id="modal1">
   <div class="modal-content release-card">
     <button class="close-btn">×</button>
     <div class="card-grid">
+      <!-- Left Column - Cover Art -->
       <div class="card-cover">
         <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
+        
+        <!-- Bandcamp Player -->
+        <iframe class="bandcamp-player" 
+                src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
+                seamless>
+          <a href="https://strataedition.bandcamp.com/album/ettrick-sites">ETTRICK SITES by Gloves to Bouquet</a>
+        </iframe>
       </div>
+      
+      <!-- Right Column - Content -->
       <div class="card-details">
         <h3>ETTRICK SITES</h3>
         <p class="artist">Gloves to Bouquet</p>
         <p class="release-date">18.01.25</p>
         
-        <div class="card-quote">
-          <p>"A disorienting plunge into corrupted memory banks"</p>
-          <a href="https://review-link.com" class="review-link" target="_blank">Full review →</a>
+        <!-- YouTube Embeds -->
+        <div class="video-embeds">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+          </div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allowfullscreen></iframe>
+          </div>
         </div>
         
+        <!-- Links -->
         <div class="card-links">
-          <a href="https://strataedition.bandcamp.com" target="_blank" class="bandcamp-link">Bandcamp</a>
-          <a href="https://youtube.com/link" target="_blank" class="video-link">Video</a>
+          <a href="https://strataedition.bandcamp.com" target="_blank" class="bandcamp-link">Full Album</a>
           <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
         </div>
       </div>

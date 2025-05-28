@@ -235,6 +235,16 @@ footer {
   transform-origin: left;
 }
 
+.event-line {
+  display: inline;
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(173, 216, 230, 0.5) 50%);
+  background-size: 100% 1.2em;
+  background-repeat: repeat-x;
+  background-position: 0 0.9em; /* Adjust to shift highlight up/down */
+  line-height: 1.6;
+}
+
+
 @media (max-width: 480px) {
   .release-cover-container {
     max-width: 280px;

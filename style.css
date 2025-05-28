@@ -235,18 +235,19 @@ footer {
   transform-origin: left;
 }
 
-.event-line {
+.event-title-line {
   display: inline;
   background-image: linear-gradient(to bottom, transparent 50%, rgba(173, 216, 230, 0.5) 50%);
   background-size: 100% 1.2em;
   background-repeat: repeat-x;
   background-position: 0 0.9em; /* Adjust to shift highlight up/down */
-  line-height: 1.6;
+  line-height: 2.5;
 }
-.event-line:nth-child(odd) {
+
+.event-title-line:nth-child(odd) {
   background-position-y: 0.85em;
 }
-.event-line:nth-child(even) {
+.event-title-line:nth-child(even) {
   background-position-y: 0.95em;
 }
 

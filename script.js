@@ -16,3 +16,10 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+
+document.querySelectorAll('.release-cover').forEach(cover => {
+  cover.addEventListener('click', () => {
+    const modalId = cover.getAttribute('data-modal');
+    document.getElementById(modalId).style.display = 'flex';
+  });
+});

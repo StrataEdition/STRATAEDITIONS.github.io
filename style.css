@@ -235,22 +235,25 @@ footer {
   transform-origin: left;
 }
 
-.event-title-line {
-  display: inline;
-  background-image: linear-gradient(to bottom, transparent 50%, rgba(173, 216, 230, 0.5) 50%);
+.event-title {
+  background-image: linear-gradient(
+    to bottom, 
+    transparent 50%, 
+    rgba(173, 216, 230, 0.5) 50%
+  );
   background-size: 100% 1.2em;
   background-repeat: repeat-x;
-  background-position: 0 0.9em; /* Adjust to shift highlight up/down */
-  line-height: 2.5;
+  background-position: 0 0.9em;
+  padding: 0 2px;
 }
 
-.event-title-line:nth-child(odd) {
+/* Optional: Add subtle variation */
+.event-line:nth-child(odd) .event-title {
   background-position-y: 0.85em;
 }
-.event-title-line:nth-child(even) {
+.event-line:nth-child(even) .event-title {
   background-position-y: 0.95em;
 }
-
 
 @media (max-width: 480px) {
   .release-cover-container {

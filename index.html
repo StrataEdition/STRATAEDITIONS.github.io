@@ -1,107 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STRATA</title>
-  <link href="style.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
+      line-height: 1.4;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Poster-Style Layout */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid black;
+      padding-bottom: 0.5rem;
+    }
+
+    .event-title {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    .artists {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .artist {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      border-top: 1px solid black;
+      padding-top: 0.5rem;
+    }
+
+    /* More Info Button (kept from original) */
+    .more-info-vertical {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%) rotate(90deg);
+      transform-origin: right top;
+      font-size: 0.8rem;
+      color: black;
+      text-decoration: none;
+      z-index: 1001;
+      padding: 0.5rem 0;
+      white-space: nowrap;
+    }
+
+    /* Modal styles (keep your existing modal CSS) */
+  </style>
 </head>
 <body>
-
-<!-- Rotated More Info button -->
-<a href="#" id="moreInfoBtn" class="more-info-vertical">ⓘ</a>
-
-<main>
-<div class="centered-content">
-    <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
+  <!-- Header with location/date -->
+  <div class="header">
+    <div class="location">THE ENGINE ROOMS • E3 4UR</div>
+    <div class="date">17/07</div>
   </div>
 
-<section class="events">
-  <p class="event-line" data-title="ETTRICK SITES EP LAUNCH"> 18.01.25_, RCA VISLAB, LONDON [GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG]</p>
-  <p class="event-line" data-title="SCANDISK EP LAUNCH">6.12.24_, GOLDSMITHS SPATLAB W/ IKLECTIK, LONDON [PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS]</p>
-  <p class="event-line" data-title="STRATA+0.1">11.11.24_, SPANNERS, LONDON [PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+]</p>
-</section>
+  <!-- Main event title -->
+  <h1 class="event-title">ONAS UENO<br>UMWELT ALBUM LAUNCH</h1>
 
-<!-- In your HTML -->
-<section class="releases">
-  <!-- Release 1 -->
-  <div class="release">
-    <div class="release-cover-container">
-      <img src="images/ettrickSites.jpg" alt="Ettrick Sites" class="release-cover" data-modal="modal1">
-    </div>
-    <div class="release-info">
-      <h3>GLOVES TO BOUQUET: ETTRICK SITES · 18.01.25</h3>
+  <!-- Artist list -->
+  <div class="artists">
+    <div class="artist">LAILA SAKINI</div>
+    <div class="artist">PARTIAL DEFRAG</div>
+    <div class="artist">CASTLE MAOL</div>
+  </div>
+
+  <!-- Footer with logo -->
+  <div class="footer">
+    <div class="strata-logo">STRATA</div>
+    <div class="links">
+      <a href="#" id="moreInfoBtn">MORE INFO</a>
     </div>
   </div>
-</section>
-  
-<!-- Modal Card Structure -->
-<div class="modal-overlay" id="modal1">
-  <div class="modal-content release-card">
-    <button class="close-btn">×</button>
-    <div class="card-grid">
-      <!-- Left Column - Cover Art -->
-      <div class="card-cover">
-        <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
-        
-        <!-- Bandcamp Player -->
-        <iframe class="bandcamp-player" 
-                src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
-                seamless>
-          <a href="https://strataedition.bandcamp.com/album/ettrick-sites">ETTRICK SITES by Gloves to Bouquet</a>
-        </iframe>
-      </div>
-      
-      <!-- Right Column - Content -->
-      <div class="card-details">
-        <h3>ETTRICK SITES</h3>
-        <p class="artist">Gloves to Bouquet</p>
-        <p class="release-date">18.01.25</p>
-        
-        <!-- YouTube Embeds -->
-        <div class="video-embeds">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-          </div>
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
-                    frameborder="0" 
-                    allowfullscreen></iframe>
-          </div>
-        </div>
-        
-        <!-- Links -->
-        <div class="card-links">
-          <a href="https://strataedition.bandcamp.com" target="_blank" class="bandcamp-link">Full Album</a>
-          <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-  <footer>
-    <p>© 2025, strata</p>
-  </footer>
-</main>
-
-<!-- Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal-content">
-    <button class="close-btn" id="closeModal">×</button>
-    <p>SHOWS ⊹ LABEL, LONDON UK</p>
-    <br>
-    <p>ROSTER: Partial Defrag, Castle Maol, Onas Ueno, Gloves To Bouquet</p>
-    <br>
-    <p>CONTACT: strata.edition at gmail.com</p>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <!-- Your existing modal structure goes here -->
 </body>
 </html>

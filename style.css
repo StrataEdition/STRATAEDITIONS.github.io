@@ -6,11 +6,11 @@
 }
 
 body {
-  font-family: 'Space Mono', monospace;
+  font-family: "Questrial", sans-serif;
   background-color: #fff;
   color: #000;
   text-transform: lowercase;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .event-line {
-  font-family: 'Space Mono', monospace;
+  font-family: "Questrial", sans-serif;
   text-transform: uppercase;
   font-size: 0.65rem;
   line-height: 1.5;

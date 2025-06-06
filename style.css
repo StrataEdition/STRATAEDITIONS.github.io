@@ -9,7 +9,6 @@ body {
   font-family: "Questrial", sans-serif;
   background-color: #fff;
   color: #000;
-  text-transform: lowercase;
   font-size: 1.2rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,7 +40,7 @@ body {
 .event-line {
   font-family: "Questrial", sans-serif;
   text-transform: uppercase;
-  font-size: 0.65rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: #000;
   margin-bottom: 1rem;
@@ -164,7 +163,7 @@ footer {
 .release-cover-container {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto 1.5rem;
   transition: all 0.4s ease;
 }
@@ -178,7 +177,7 @@ footer {
 }
 
 .release-cover-container:hover .release-cover {
-  filter: blur(3px);
+  filter: blur(5px);
 }
 
 .release-info {
@@ -246,9 +245,9 @@ footer {
 /* Card Layout */
 .release-card {
   max-width: 700px !important; 
-  width: 120vw;
+  width: 80vw;
   padding: 2rem;
-  aspect-ratio: 1.5/0.5; /* 1:2 ratio */
+  aspect-ratio: 1/0.5; /* 1:2 ratio */
 }
 
 .card-grid {

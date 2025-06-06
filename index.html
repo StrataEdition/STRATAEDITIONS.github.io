@@ -13,69 +13,76 @@
   <!-- Your existing HTML structure -->
   <a href="#" id="moreInfoBtn" class="more-info-vertical">ⓘ</a>
 
-  <main>
-    <!-- Logo section -->
-    <div class="centered-content">
-      <img src="images/strataLogo.png" alt="STRATA logo" class="logo">
+<main>
+<div class="centered-content">
+    <img src="images/strataLogo.png" alt="STRATA logo" class="logo">
+  </div>
+
+<section class="events">
+  <p class="event-line" data-title="ETTRICK SITES EP LAUNCH"> 18.01.25_, RCA VISLAB, LONDON [GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG]</p>
+  <p class="event-line" data-title="SCANDISK EP LAUNCH">6.12.24_, GOLDSMITHS SPATLAB W/ IKLECTIK, LONDON [PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS]</p>
+  <p class="event-line" data-title="STRATA+0.1">11.11.24_, SPANNERS, LONDON [PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+]</p>
+</section>
+
+<!-- In your HTML -->
+<section class="releases">
+  <!-- Release 1 -->
+  <div class="release">
+    <div class="release-cover-container">
+      <img src="images/ettrickSites.jpg" alt="Ettrick Sites" class="release-cover" data-modal="modal1">
     </div>
-
-    <!-- Events section -->
-    <section class="events">
-      <p class="event-line">18.01.25_GLOVES TO BOQUET'S ETTRICK SITES EP LAUNCH, RCA VISLAB, LONDON</p>
-      <!-- More events... -->
-    </section>
-
-    <!-- Releases section -->
-    <section class="releases">
-      <div class="release">
-        <div class="release-cover-container">
-          <img src="images/ettrickSites.jpg" alt="Ettrick Sites" class="release-cover" data-modal="modal1">
-        </div>
-        <div class="release-info">
-          <h3>GLOVES TO BOUQUET: ETTRICK SITES · 18.01.25</h3>
-        </div>
+    <div class="release-info">
+      <h3>GLOVES TO BOUQUET: ETTRICK SITES · 18.01.25</h3>
+    </div>
+  </div>
+</section>
+  
+<!-- Modal Card Structure -->
+<div class="modal-overlay" id="modal1" style="display: none;">
+  <div class="modal-content release-card">
+    <button class="close-btn">×</button>
+    <div class="card-grid">
+      <!-- Left Column - Cover Art -->
+      <div class="card-cover">
+        <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
+        
+        <!-- Bandcamp Player -->
+        <iframe class="bandcamp-player" src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="">
+          <a href="https://strataedition.bandcamp.com/album/ettrick-sites">ETTRICK SITES by Gloves to Bouquet</a>
+        </iframe>
       </div>
-    </section>
-
-    <!-- Modal Card with Questrial font -->
-    <div class="modal-overlay" id="modal1">
-      <div class="modal-content release-card">
-        <button class="close-btn">×</button>
-        <div class="card-grid">
-          <div class="card-cover">
-            <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
-            <iframe class="bandcamp-player" 
-                    src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
-                    seamless>
-            </iframe>
+      
+      <!-- Right Column - Content -->
+      <div class="card-details">
+        <h3>ETTRICK SITES</h3>
+        <p class="artist">Gloves to Bouquet</p>
+        <p class="release-date">18.01.25</p>
+        
+        <!-- YouTube Embeds -->
+        <div class="video-embeds">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&amp;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
           </div>
-          <div class="card-details">
-            <h3>ETTRICK SITES</h3>
-            <p class="artist">Gloves to Bouquet</p>
-            <p class="release-date">18.01.25</p>
-            
-            <div class="video-embeds">
-              <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
-                        frameborder="0" 
-                        allowfullscreen></iframe>
-              </div>
-              <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
-                        frameborder="0" 
-                        allowfullscreen></iframe>
-              </div>
-            </div>
-            
-            <div class="card-links">
-              <a href="https://strataedition.bandcamp.com" target="_blank" class="bandcamp-link">Full Album</a>
-              <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
-            </div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&amp;rel=0" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
+        
+        <!-- Links -->
+        <div class="card-links">
+          <a href="https://strataedition.bandcamp.com" target="_blank" class="bandcamp-link">Full Album</a>
+          <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
+        </div>
       </div>
     </div>
-  </main>
+  </div>
+</div>
+
+
+  <footer>
+    <p>© 2025, STRATA</p>
+  </footer>
+</main>
 
   <script>
     // Your existing JavaScript

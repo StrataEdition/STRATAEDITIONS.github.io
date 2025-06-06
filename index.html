@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STRATA</title>
-  <!-- Font Import -->
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-  <!-- Bandcamp Embed Script -->
-  <script src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless></script>
+  <link href="style.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Your existing HTML structure -->
-  <a href="#" id="moreInfoBtn" class="more-info-vertical">ⓘ</a>
+
+<!-- Rotated More Info button -->
+<a href="#" id="moreInfoBtn" class="more-info-vertical">ⓘ</a>
 
 <main>
 <div class="centered-content">
-    <img src="images/strataLogo.png" alt="STRATA logo" class="logo">
+    <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
   </div>
 
 <section class="events">
@@ -38,7 +37,7 @@
 </section>
   
 <!-- Modal Card Structure -->
-<div class="modal-overlay" id="modal1" style="display: none;">
+<div class="modal-overlay" id="modal1">
   <div class="modal-content release-card">
     <button class="close-btn">×</button>
     <div class="card-grid">
@@ -47,7 +46,9 @@
         <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
         
         <!-- Bandcamp Player -->
-        <iframe class="bandcamp-player" src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="">
+        <iframe class="bandcamp-player" 
+                src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
+                seamless>
           <a href="https://strataedition.bandcamp.com/album/ettrick-sites">ETTRICK SITES by Gloves to Bouquet</a>
         </iframe>
       </div>
@@ -61,10 +62,15 @@
         <!-- YouTube Embeds -->
         <div class="video-embeds">
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&amp;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
           </div>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&amp;rel=0" frameborder="0" allowfullscreen=""></iframe>
+            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allowfullscreen></iframe>
           </div>
         </div>
         
@@ -80,42 +86,22 @@
 
 
   <footer>
-    <p>© 2025, STRATA</p>
+    <p>© 2025, strata</p>
   </footer>
 </main>
 
-  <script>
-    // Your existing JavaScript
-    document.addEventListener('DOMContentLoaded', function() {
-      const moreInfoBtn = document.getElementById('moreInfoBtn');
-      const moreInfoModal = document.getElementById('modal');
-      const closeBtns = document.querySelectorAll('.close-btn');
-      const releaseCovers = document.querySelectorAll('.release-cover');
-      
-      moreInfoBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        moreInfoModal.style.display = 'flex';
-      });
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeModal">×</button>
+    <p>SHOWS ⊹ LABEL, LONDON UK</p>
+    <br>
+    <p>ROSTER: Partial Defrag, Castle Maol, Onas Ueno, Gloves To Bouquet</p>
+    <br>
+    <p>CONTACT: strata.edition at gmail.com</p>
+  </div>
+</div>
 
-      releaseCovers.forEach(cover => {
-        cover.addEventListener('click', function() {
-          const modalId = this.getAttribute('data-modal');
-          document.getElementById(modalId).style.display = 'flex';
-        });
-      });
-
-      closeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          this.closest('.modal-overlay').style.display = 'none';
-        });
-      });
-
-      window.addEventListener('click', function(e) {
-        if (e.target.classList.contains('modal-overlay')) {
-          e.target.style.display = 'none';
-        }
-      });
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>

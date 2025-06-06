@@ -4,105 +4,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STRATA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <!-- Bandcamp Embed Script -->
+  <script src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless></script>
   <style>
-    /* Base Reset */
+    /* Base Styles with Questrial */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-family: 'Questrial', sans-serif;
     }
 
     body {
-      font-family: 'Space Mono', monospace;
-      background: white;
-      color: black;
-      line-height: 1.4;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Poster-Style Layout */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      border-bottom: 1px solid black;
-      padding-bottom: 0.5rem;
-    }
-
-    .event-title {
-      font-size: 2.5rem;
-      line-height: 1;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-      letter-spacing: -0.05em;
-    }
-
-    .artists {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .artist {
-      text-transform: uppercase;
-      font-size: 1.2rem;
-    }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 3rem;
-      border-top: 1px solid black;
-      padding-top: 0.5rem;
-    }
-
-    /* More Info Button (kept from original) */
-    .more-info-vertical {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%) rotate(90deg);
-      transform-origin: right top;
+      background-color: #fff;
+      color: #000;
       font-size: 0.8rem;
-      color: black;
-      text-decoration: none;
-      z-index: 1001;
-      padding: 0.5rem 0;
-      white-space: nowrap;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Modal styles (keep your existing modal CSS) */
+    /* Text Transform Overrides (keep your uppercase style) */
+    .event-line,
+    .release-info h3,
+    .card-details h3,
+    .card-links a {
+      text-transform: uppercase;
+      font-family: 'Questrial', sans-serif;
+    }
+
+    /* Modal Card with Questrial */
+    .release-card {
+      font-family: 'Questrial', sans-serif;
+    }
+
+    /* Bandcamp Player */
+    .bandcamp-player {
+      font-family: 'Questrial', sans-serif !important; /* Override Bandcamp's default */
+    }
+
+    /* Rest of your existing CSS remains the same */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* ... (keep all your other existing CSS rules) ... */
   </style>
 </head>
 <body>
-  <!-- Header with location/date -->
-  <div class="header">
-    <div class="location">THE ENGINE ROOMS • E3 4UR</div>
-    <div class="date">17/07</div>
-  </div>
+  <!-- Your existing HTML structure -->
+  <a href="#" id="moreInfoBtn" class="more-info-vertical">ⓘ</a>
 
-  <!-- Main event title -->
-  <h1 class="event-title">ONAS UENO<br>UMWELT ALBUM LAUNCH</h1>
-
-  <!-- Artist list -->
-  <div class="artists">
-    <div class="artist">LAILA SAKINI</div>
-    <div class="artist">PARTIAL DEFRAG</div>
-    <div class="artist">CASTLE MAOL</div>
-  </div>
-
-  <!-- Footer with logo -->
-  <div class="footer">
-    <div class="strata-logo">STRATA</div>
-    <div class="links">
-      <a href="#" id="moreInfoBtn">MORE INFO</a>
+  <main>
+    <!-- Logo section -->
+    <div class="centered-content">
+      <img src="images/strataLogo.png" alt="STRATA logo" class="logo">
     </div>
-  </div>
 
-  <!-- Your existing modal structure goes here -->
+    <!-- Events section -->
+    <section class="events">
+      <p class="event-line">18.01.25_GLOVES TO BOQUET'S ETTRICK SITES EP LAUNCH, RCA VISLAB, LONDON</p>
+      <!-- More events... -->
+    </section>
+
+    <!-- Releases section -->
+    <section class="releases">
+      <div class="release">
+        <div class="release-cover-container">
+          <img src="images/ettrickSites.jpg" alt="Ettrick Sites" class="release-cover" data-modal="modal1">
+        </div>
+        <div class="release-info">
+          <h3>GLOVES TO BOUQUET: ETTRICK SITES · 18.01.25</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Card with Questrial font -->
+    <div class="modal-overlay" id="modal1">
+      <div class="modal-content release-card">
+        <button class="close-btn">×</button>
+        <div class="card-grid">
+          <div class="card-cover">
+            <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
+            <iframe class="bandcamp-player" 
+                    src="https://bandcamp.com/EmbeddedPlayer/album=123456789/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
+                    seamless>
+            </iframe>
+          </div>
+          <div class="card-details">
+            <h3>ETTRICK SITES</h3>
+            <p class="artist">Gloves to Bouquet</p>
+            <p class="release-date">18.01.25</p>
+            
+            <div class="video-embeds">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
+                        frameborder="0" 
+                        allowfullscreen></iframe>
+              </div>
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
+                        frameborder="0" 
+                        allowfullscreen></iframe>
+              </div>
+            </div>
+            
+            <div class="card-links">
+              <a href="https://strataedition.bandcamp.com" target="_blank" class="bandcamp-link">Full Album</a>
+              <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Your existing JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const moreInfoBtn = document.getElementById('moreInfoBtn');
+      const moreInfoModal = document.getElementById('modal');
+      const closeBtns = document.querySelectorAll('.close-btn');
+      const releaseCovers = document.querySelectorAll('.release-cover');
+      
+      moreInfoBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        moreInfoModal.style.display = 'flex';
+      });
+
+      releaseCovers.forEach(cover => {
+        cover.addEventListener('click', function() {
+          const modalId = this.getAttribute('data-modal');
+          document.getElementById(modalId).style.display = 'flex';
+        });
+      });
+
+      closeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          this.closest('.modal-overlay').style.display = 'none';
+        });
+      });
+
+      window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal-overlay')) {
+          e.target.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

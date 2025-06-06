@@ -9,7 +9,7 @@ body {
   font-family: "Questrial", sans-serif;
   background-color: #fff;
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,7 +40,7 @@ body {
 .event-line {
   font-family: "Questrial", sans-serif;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: #000;
   margin-bottom: 1rem;
@@ -88,7 +88,7 @@ footer {
   right: 0;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: right top;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: black;
   text-decoration: none;
   font-weight: 500;

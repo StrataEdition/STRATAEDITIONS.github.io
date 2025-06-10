@@ -29,7 +29,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Events section - MODIFIED */
+/* Events section */
 .events {
   max-width: 600px;
   margin: 2rem auto;
@@ -47,30 +47,10 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* Add this new rule to make show titles blue */
 .event-line::after {
   content: attr(data-title);
-  color: #0066cc; /* Pure blue color */
+  color: #0066cc;
   margin-left: 0.5em;
-}
-
-/* Navigation */
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-ul li a {
-  color: #000;
-  text-decoration: none;
-  font-size: 0.8rem;
-}
-
-ul li a:hover {
-  opacity: 0.6;
 }
 
 /* Footer */
@@ -173,87 +153,25 @@ footer {
   height: auto;
   filter: blur(0);
   transition: filter 0.8s ease;
-  cursor: pointer; /* Add pointer to indicate clickable */
+  cursor: pointer;
 }
 
 .release-cover-container:hover .release-cover {
   filter: blur(5px);
 }
 
-.release-info {
-  width: 100%;
-  text-align: center;
-}
-
-.release-info h3 {
-  font-size: 0.75rem;
-  font-weight: normal;
-  margin: 0 0 0.8rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.review-quote {
-  font-size: 0.7rem;
-  font-style: italic;
-  line-height: 1.5;
-  margin: 0 auto 1.2rem;
-  width: 100%;
-  max-width: 340px;
-}
-
-.review-source {
-  font-style: normal;
-}
-
-.release-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.review-link,
-.buy-link {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #000;
-  text-decoration: none;
-  position: relative;
-}
-
-.review-link:after,
-.buy-link:after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: #000;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.review-link:hover:after,
-.buy-link:hover:after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
 /* Card Layout */
 .release-card {
-  max-width: 700px !important; 
-  width: 80vw;
-  padding: 2rem;
-  aspect-ratio: 1/0.5; /* 1:2 ratio */
+  max-width: 900px !important; 
+  width: 90vw;
+  padding: 2.5rem;
+  aspect-ratio: 1/0.65;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
   height: 100%;
 }
 
@@ -265,7 +183,7 @@ footer {
 .card-image {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: 400px;
   object-fit: cover;
 }
 
@@ -273,9 +191,11 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
+  max-height: 80vh;
+  padding-right: 0.5rem;
 }
 
-/* Typography */
 .card-details h3 {
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -294,24 +214,30 @@ footer {
   color: #666;
 }
 
-/* Quote Section */
-.card-quote {
+/* Video Section */
+.video-embeds {
+  display: grid;
+  gap: 1rem;
   margin: 1.5rem 0;
 }
 
-.card-quote p {
-  font-style: italic;
-  line-height: 1.4;
-  margin-bottom: 0.5rem;
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
 }
 
-.review-link {
-  font-size: 0.7rem;
-  text-decoration: none;
-  color: #0066cc;
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
 }
 
-/* Links Section */
+/* Card Links */
 .card-links {
   display: flex;
   gap: 1rem;
@@ -341,67 +267,10 @@ footer {
   opacity: 0.7;
 }
 
-/* Embedded Media Styles */
-.bandcamp-player {
-  width: 100%;
-  height: 120px;
-  margin-top: 1.5rem;
-  border: 1px solid #f0f0f0;
-}
-
-.video-embeds {
-  display: grid;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #000;
-}
-
-/* Custom Scrollbar */
-.card-details::-webkit-scrollbar {
-  width: 3px;
-}
-
-.card-details::-webkit-scrollbar-thumb {
-  background: #000;
-}
-
-/* Layout Adjustments */
-.card-grid {
-  grid-template-columns: 1fr 1.5fr; /* Slightly wider right column */
-}
-
-.card-details {
-  overflow-y: auto; /* Scrollable if content overflows */
-  max-height: 80vh;
-  padding-right: 0.5rem;
-}
-
-
-
-
 /* Responsive */
 @media (max-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .bandcamp-player {
-    height: 100px;
   }
   
   .card-details {

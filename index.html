@@ -4,60 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STRATA</title>
-  <link href="style-alt.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="poster-layout">
-    <!-- Decorative elements similar to the butterflies -->
-    <div class="decorative-elements">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+
+<!-- Rotated More Info button -->
+<a href="#" id="moreInfoBtn" class="more-info-vertical">⁝</a>
+
+<main>
+<div class="centered-content">
+    <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
+  </div>
+
+<section class="events">
+  <p class="event-line" data-title="ETTRICK SITES EP LAUNCH"> 18.01.25_, RCA VISLAB, LONDON [GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG]</p>
+  <p class="event-line" data-title="SCANDISK EP LAUNCH">6.12.24_, GOLDSMITHS SPATLAB W/ IKLECTIK, LONDON [PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS]</p>
+  <p class="event-line" data-title="STRATA+0.1">11.11.24_, SPANNERS, LONDON [PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+]</p>
+</section>
+
+<!-- In your HTML -->
+<section class="releases">
+  <!-- Release 1 -->
+  <div class="release">
+    <div class="release-cover-container">
+      <img src="images/ettrickSites.jpg" alt="Ettrick Sites" class="release-cover" data-modal="modal1">
     </div>
-
-    <!-- Main content area -->
-    <div class="content-area">
-      <div class="event-details">
-        <div class="event-block">
-          <p class="event-title">ETTRICK SITES EP LAUNCH</p>
-          <p class="event-info">18.01.25_, RCA VISLAB, LONDON</p>
-          <p class="lineup">[GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG]</p>
+  </div>
+</section>
+  
+<!-- Modal Card Structure -->
+<div class="modal-overlay" id="modal1">
+  <div class="modal-content release-card">
+    <button class="close-btn">×</button>
+    <div class="card-grid">
+      <!-- Left Column - Cover Art -->
+      <div class="card-cover">
+        <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
+      </div>
+      
+      <!-- Right Column - Content -->
+      <div class="card-details">
+        <h3>Ettrick Sites</h3>
+        <p class="artist">Gloves to Bouquet</p>
+        <p class="release-date">18.01.25</p>
+        
+        <!-- YouTube Embeds -->
+        <div class="video-embeds">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+          </div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
+                    frameborder="0" 
+                    allowfullscreen></iframe>
+          </div>
         </div>
-
-        <div class="event-block">
-          <p class="event-title">SCANDISK EP LAUNCH</p>
-          <p class="event-info">6.12.24_, GOLDSMITHS SPATLAB W/ IKLECTIK, LONDON</p>
-          <p class="lineup">[PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS]</p>
-        </div>
-
-        <div class="event-block">
-          <p class="event-title">STRATA+0.1</p>
-          <p class="event-info">11.11.24_, SPANNERS, LONDON</p>
-          <p class="lineup">[PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+]</p>
+        
+        <!-- Links -->
+        <div class="card-links">
+          <a href="https://strataedition.bandcamp.com" target="_blank" class="https://strataedition.bandcamp.com/album/ettrick-sites">Full Album</a>
+          <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
+              <p>"this is a quote etc."</p>
         </div>
       </div>
     </div>
-
-    <!-- Logo at bottom -->
-    <div class="logo-container">
-      <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
-    </div>
   </div>
+</div>
 
-  <!-- More Info Button -->
-  <a href="#" id="moreInfoBtn" class="more-info-vertical">⁝</a>
 
-  <!-- Modal -->
-  <div class="modal-overlay" id="modal">
-    <div class="modal-content">
-      <button class="close-btn" id="closeModal">×</button>
-      <p>SHOWS ⊹ LABEL, LONDON UK</p>
-      <br>
-      <p>strata.edition at gmail.com</p>
-    </div>
+  <footer>
+    <p>© 2025, STRATA</p>
+  </footer>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeModal">×</button>
+    <p>SHOWS ⊹ LABEL, LONDON UK</p>
+    <br>
+    <p>strata.edition at gmail.com</p>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-</html> 
+</html>

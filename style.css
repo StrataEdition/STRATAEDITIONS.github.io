@@ -12,94 +12,56 @@ body {
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+}
+
+/* Centered logo */
+.centered-content {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Poster Layout */
-.poster-layout {
-  width: 100%;
-  max-width: 800px;
-  height: 90vh;
-  margin: 0 auto;
-  padding: 2rem;
-  position: relative;
-  display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Decorative Elements */
-.decorative-elements {
-  position: absolute;
-  top: 20%;
-  right: 15%;
-  width: 200px;
-  height: 100px;
-}
-
-.dot {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #000;
-  border-radius: 50%;
-  transform: rotate(45deg);
-}
-
-.dot:nth-child(1) { top: 0; left: 0; }
-.dot:nth-child(2) { top: 20px; left: 40px; }
-.dot:nth-child(3) { top: 40px; left: 80px; }
-
-/* Content Area */
-.content-area {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-}
-
-.event-details {
-  width: 100%;
-  max-width: 600px;
-  margin-left: 10%;
-}
-
-.event-block {
-  margin-bottom: 2.5rem;
-}
-
-.event-title {
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-  font-weight: normal;
-}
-
-.event-info {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
-.lineup {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-/* Logo */
-.logo-container {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 10%;
 }
 
 .logo {
-  width: 120px;
+  max-width: 180px;
   height: auto;
+  margin-bottom: 2rem;
 }
 
-/* More Info Button */
+/* Events section */
+.events {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.event-line {
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.event-line::after {
+  content: attr(data-title);
+  color: #0066cc;
+  margin-left: 0.5em;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* More info button */
 .more-info-vertical {
   position: fixed;
   top: 50%;
@@ -159,17 +121,160 @@ body {
   color: black;
 }
 
+/* Releases Section */
+.releases {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.release {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.release-cover-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.release-cover {
+  width: 100%;
+  height: auto;
+  filter: blur(0);
+  transition: filter 0.8s ease;
+  cursor: pointer;
+}
+
+.release-cover-container:hover .release-cover {
+  filter: blur(5px);
+}
+
+/* Card Layout */
+.release-card {
+  max-width: 900px !important; 
+  width: 90vw;
+  padding: 2.5rem;
+  aspect-ratio: 1/0.65;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  height: 100%;
+}
+
+.card-cover {
+  display: flex;
+  align-items: center;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  max-height: 80vh;
+  padding-right: 0.5rem;
+}
+
+.card-details h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.artist {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.release-date {
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+/* Card Links */
+.card-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card-links a {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+
+.bandcamp-link {
+  background: #000;
+  color: #fff;
+}
+
+.video-link, .press-link {
+  background: transparent;
+  color: #000;
+}
+
+.card-links a:hover {
+  opacity: 0.7;
+}
+
+/* Video Section */
+.video-embeds {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .event-details {
-    margin-left: 5%;
+  .card-grid {
+    grid-template-columns: 1fr;
   }
   
-  .logo-container {
-    margin-left: 5%;
+  .card-details {
+    max-height: none;
   }
-  
-  .decorative-elements {
-    display: none;
-  }
-} 
+}

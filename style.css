@@ -190,7 +190,7 @@ footer {
 .card-details {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow-y: auto;
   max-height: 80vh;
   padding-right: 0.5rem;
@@ -214,43 +214,24 @@ footer {
   color: #666;
 }
 
-/* Video Section */
-.video-embeds {
-  display: grid;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #000;
-}
-
 /* Card Links */
 .card-links {
   display: flex;
-  gap: 1rem;
-  margin-top: auto;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .card-links a {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.7rem;
   border: 1px solid #000;
   transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: center;
 }
 
 .bandcamp-link {
@@ -267,6 +248,37 @@ footer {
   opacity: 0.7;
 }
 
+/* Video Section */
+.video-embeds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 0;
+  width: 100%;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid #000;
+  transition: transform 0.3s ease;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .card-grid {
@@ -275,5 +287,20 @@ footer {
   
   .card-details {
     max-height: none;
+  }
+
+  .video-embeds {
+    grid-template-columns: 1fr;
+  }
+
+  .card-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card-links a {
+    width: 100%;
+    max-width: 200px;
   }
 }

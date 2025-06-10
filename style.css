@@ -220,7 +220,6 @@ footer {
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  width: 100%;
 }
 
 .card-links a {
@@ -230,8 +229,6 @@ footer {
   font-size: 0.7rem;
   border: 1px solid #000;
   transition: all 0.3s ease;
-  min-width: 120px;
-  text-align: center;
 }
 
 .bandcamp-link {
@@ -251,10 +248,8 @@ footer {
 /* Video Section */
 .video-embeds {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 0;
-  width: 100%;
+  gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .video-wrapper {
@@ -262,12 +257,6 @@ footer {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border: 1px solid #000;
-  transition: transform 0.3s ease;
-}
-
-.video-wrapper:hover {
-  transform: scale(1.02);
 }
 
 .video-wrapper iframe {
@@ -276,7 +265,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 1px solid #000;
 }
 
 /* Responsive */
@@ -287,20 +276,5 @@ footer {
   
   .card-details {
     max-height: none;
-  }
-
-  .video-embeds {
-    grid-template-columns: 1fr;
-  }
-
-  .card-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .card-links a {
-    width: 100%;
-    max-width: 200px;
   }
 }

@@ -1,96 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STRATA</title>
-  <link href="style.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Rotated More Info button -->
+  <a href="#" id="moreInfoBtn" class="more-info-vertical">⁝</a>
 
-<!-- Rotated More Info button -->
-<a href="#" id="moreInfoBtn" class="more-info-vertical">⁝</a>
-
-<main>
-<div class="centered-content">
-    <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
-  </div>
-
-<section class="events">
-  <p class="event-line" data-title="ETTRICK SITES EP LAUNCH"> 18.01.25_, RCA VISLAB, LONDON [GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG]</p>
-  <p class="event-line" data-title="SCANDISK EP LAUNCH">6.12.24_, GOLDSMITHS SPATLAB W/ IKLECTIK, LONDON [PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS]</p>
-  <p class="event-line" data-title="STRATA+0.1">11.11.24_, SPANNERS, LONDON [PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+]</p>
-</section>
-
-<!-- In your HTML -->
-<section class="releases">
-  <!-- Release 1 -->
-  <div class="release">
-    <div class="release-cover-container">
-      <img src="images/EttrickPoster.png" alt="Ettrick Sites" class="release-cover" data-modal="modal1">
+  <!-- Main Content -->
+  <main>
+    <div class="categories">
+      <div class="category active" data-target="shows">SHOWS</div>
+      <div class="category" data-target="label">LABEL</div>
     </div>
-  </div>
-</section>
-  
-<!-- Modal Card Structure -->
-<div class="modal-overlay" id="modal1">
-  <div class="modal-content release-card">
-    <button class="close-btn">×</button>
-    <div class="card-grid">
-      <!-- Left Column - Cover Art -->
-      <div class="card-cover">
-        <img src="images/ettrickSites.jpg" alt="Album Cover" class="card-image">
-      </div>
-      
-      <!-- Right Column - Content -->
-      <div class="card-details">
-        <h3>Ettrick Sites</h3>
-        <p class="artist">Gloves to Bouquet</p>
-        <p class="release-date">18.01.25</p>
-        
-        <!-- YouTube Embeds -->
-        <div class="video-embeds">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+
+    <!-- Shows Section -->
+    <section id="shows" class="section active">
+      <div class="items-list">
+        <!-- Show 1 -->
+        <div class="item" data-id="show1">
+          <div class="item-header">
+            <div class="item-title">ETTRICK SITES EP LAUNCH</div>
+            <div class="item-date">18.01.25</div>
           </div>
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?modestbranding=1&rel=0" 
-                    frameborder="0" 
-                    allowfullscreen></iframe>
+          <div class="item-venue">RCA VISLAB, LONDON</div>
+          <div class="item-artists">GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG</div>
+          
+          <div id="detail-show1" class="detail-view">
+            <div class="detail-header">
+              <h2>ETTRICK SITES EP LAUNCH</h2>
+              <div class="item-date">18.01.25</div>
+            </div>
+            <div class="detail-content">
+              <img src="images/EttrickPoster.png" alt="Show Poster" class="detail-image">
+              <div class="detail-info">
+                <p><strong>Venue:</strong> RCA VISLAB, LONDON</p>
+                <p><strong>Artists:</strong> Gloves to Bouquet, Castle Maol, Partial Defrag</p>
+                <div class="detail-description">
+                  <p>Launch event for Gloves to Bouquet's debut EP on STRATA.</p>
+                </div>
+                <div class="detail-links">
+                  <a href="#" target="_blank">Event Info</a>
+                  <a href="#" target="_blank">Tickets</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <!-- Links -->
-        <div class="card-links">
-          <a href="https://strataedition.bandcamp.com" target="_blank" class="https://strataedition.bandcamp.com/album/ettrick-sites">Full Album</a>
-          <a href="https://review-link.com" target="_blank" class="press-link">Press</a>
-              <p>"this is a quote etc."</p>
+        <!-- Show 2 -->
+        <div class="item" data-id="show2">
+          <div class="item-header">
+            <div class="item-title">SCANDISK EP LAUNCH</div>
+            <div class="item-date">06.12.24</div>
+          </div>
+          <div class="item-venue">GOLDSMITHS SPATLAB W/ IKLECTIK</div>
+          <div class="item-artists">PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS</div>
+          
+          <div id="detail-show2" class="detail-view">
+            <!-- Detail content for show 2 -->
+          </div>
+        </div>
+        
+        <!-- Show 3 -->
+        <div class="item" data-id="show3">
+          <div class="item-header">
+            <div class="item-title">STRATA+0.1</div>
+            <div class="item-date">11.11.24</div>
+          </div>
+          <div class="item-venue">SPANNERS, LONDON</div>
+          <div class="item-artists">PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+</div>
+          
+          <div id="detail-show3" class="detail-view">
+            <!-- Detail content for show 3 -->
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
 
+    <!-- Label Section -->
+    <section id="label" class="section">
+      <div class="items-list">
+        <!-- Release 1 -->
+        <div class="item" data-id="release1">
+          <div class="item-header">
+            <div class="item-title">ETTRICK SITES</div>
+            <div class="item-date">18.01.25</div>
+          </div>
+          <div class="item-artist">Gloves to Bouquet</div>
+          
+          <div id="detail-release1" class="detail-view">
+            <div class="detail-header">
+              <h2>ETTRICK SITES</h2>
+              <div class="item-date">18.01.25</div>
+            </div>
+            <div class="detail-content">
+              <img src="images/ettrickSites.jpg" alt="Album Cover" class="detail-image">
+              <div class="detail-info">
+                <p><strong>Artist:</strong> Gloves to Bouquet</p>
+                <p><strong>Label:</strong> STRATA</p>
+                <div class="detail-description">
+                  <p>"A disorienting plunge into corrupted memory banks" - The Wire</p>
+                </div>
+                <div class="video-embeds">
+                  <div class="video-wrapper">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/AvJs1v066kA?modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="detail-links">
+                  <a href="https://strataedition.bandcamp.com/album/ettrick-sites" target="_blank">Bandcamp</a>
+                  <a href="https://www.thewire.co.uk/audio/tracks/partial-defrag-scandisk" target="_blank">Review</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Release 2 -->
+        <div class="item" data-id="release2">
+          <div class="item-header">
+            <div class="item-title">SCANDISK</div>
+            <div class="item-date">29.11.24</div>
+          </div>
+          <div class="item-artist">Partial Defrag</div>
+          
+          <div id="detail-release2" class="detail-view">
+            <!-- Detail content for release 2 -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025, STRATA</p>
+    <p>strata.edition@gmail.com</p>
   </footer>
-</main>
 
-<!-- Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal-content">
-    <button class="close-btn" id="closeModal">×</button>
-    <p>SHOWS ⊹ LABEL, LONDON UK</p>
-    <br>
-    <p>strata.edition at gmail.com</p>
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">×</button>
+      <p>SHOWS ⊹ LABEL, LONDON UK</p>
+      <br>
+      <p>strata.edition@gmail.com</p>
+    </div>
   </div>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>

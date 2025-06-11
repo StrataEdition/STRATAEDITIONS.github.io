@@ -13,7 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
@@ -33,7 +33,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .logo {
@@ -63,7 +63,7 @@ main {
   margin: 0 auto;
   width: 100%;
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .category {
@@ -72,6 +72,11 @@ main {
   padding-bottom: 0.5rem;
   min-width: 120px;
   text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.category:hover {
+  opacity: 0.7;
 }
 
 .category.active {
@@ -118,7 +123,7 @@ main {
 /* Items List */
 .items-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
@@ -126,17 +131,18 @@ main {
   padding: 0.75rem 0;
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .item:hover {
   background-color: #f9f9f9;
+  transform: translateX(5px);
 }
 
 .item-content {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   font-weight: bold;
   font-size: 0.75rem;
 }
@@ -161,21 +167,29 @@ main {
 /* Detail View */
 .detail-view {
   display: none;
-  margin-top: 1.5rem;
-  padding: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
   border: 1px solid #eee;
   font-size: 0.75rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .detail-view.active {
   display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .detail-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
@@ -188,82 +202,44 @@ main {
 .detail-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .detail-image {
   width: 100%;
   height: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .detail-info {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .detail-info p {
   font-size: 0.75rem;
+  line-height: 1.6;
 }
 
 .detail-description {
   margin: 1rem 0;
   font-size: 0.75rem;
+  line-height: 1.6;
+  color: #444;
 }
 
-.detail-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.detail-links a {
-  padding: 0.5rem 1rem;
-  border: 1px solid #000;
-  text-decoration: none;
-  color: #000;
-  font-size: 0.75rem;
-  transition: all 0.2s ease;
-}
-
-.detail-links a:hover {
-  background: #000;
-  color: #fff;
-}
-
-/* More Info Button */
-.more-info-vertical {
-  position: fixed;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%) rotate(90deg);
-  transform-origin: right top;
-  font-size: 1.2rem;
-  color: black;
-  text-decoration: none;
-  z-index: 1001;
-  padding: 0.5rem 0;
-  white-space: nowrap;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  font-size: 0.7rem;
+  color: #666;
 }
 
 /* Modal Styles */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  z-index: 1002;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.2);
-  justify-content: center;
-  align-items: center;
-}
-
 .modal-content {
   background: #fff;
   padding: 2rem 3rem;
@@ -282,16 +258,12 @@ main {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eee;
-  font-size: 0.7rem;
-  color: #666;
+.close-btn:hover {
+  opacity: 1;
 }
 
 /* Responsive */
@@ -322,6 +294,7 @@ footer {
   
   .detail-content {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .item-content {

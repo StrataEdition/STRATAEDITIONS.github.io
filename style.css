@@ -9,7 +9,7 @@ body {
   font-family: 'Questrial', sans-serif;
   background-color: #fff;
   color: #000;
-  font-size: 1rem;
+  font-size: 0.9rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
@@ -18,14 +18,28 @@ body {
   padding: 2rem;
 }
 
+/* Centered Logo */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.logo {
+  max-width: 250px;
+  height: auto;
+}
+
 /* Navigation */
 .categories {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  margin: 4rem 0 3rem;
-  font-size: 1.5rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .category {
@@ -57,7 +71,7 @@ body {
 /* Content Sections */
 .section {
   display: none;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section.active {
@@ -67,11 +81,11 @@ body {
 /* Items List */
 .items-list {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .item {
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid #eee;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -81,28 +95,36 @@ body {
   background-color: #f9f9f9;
 }
 
-.item-header {
+.item-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
+  font-weight: bold;
+  font-size: 0.85rem;
 }
 
 .item-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  min-width: 200px;
 }
 
 .item-date {
+  min-width: 80px;
   color: #666;
-  font-size: 0.9rem;
+}
+
+.item-venue {
+  min-width: 200px;
+}
+
+.item-artists, .item-artist {
+  flex: 1;
 }
 
 /* Detail View */
 .detail-view {
   display: none;
-  margin-top: 2rem;
-  padding: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
   border: 1px solid #eee;
 }
 
@@ -215,10 +237,10 @@ body {
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 4rem;
-  padding-top: 2rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
   border-top: 1px solid #eee;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #666;
 }
 
@@ -226,10 +248,24 @@ footer {
 @media (max-width: 768px) {
   .categories {
     gap: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .detail-content {
     grid-template-columns: 1fr;
+  }
+
+  .item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .item-title,
+  .item-date,
+  .item-venue,
+  .item-artists,
+  .item-artist {
+    min-width: auto;
   }
 }

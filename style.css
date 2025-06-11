@@ -9,7 +9,7 @@ body {
   font-family: 'Questrial', sans-serif;
   background-color: #fff;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
@@ -46,6 +46,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Navigation */
@@ -55,14 +58,18 @@ main {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: bold;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .category {
   cursor: pointer;
   position: relative;
   padding-bottom: 0.5rem;
+  min-width: 120px;
+  text-align: center;
 }
 
 .category.active {
@@ -90,12 +97,15 @@ main {
   display: flex;
   gap: 4rem;
   justify-content: center;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 /* Content Sections */
 .section {
   display: none;
   width: 400px;
+  margin: 0 auto;
 }
 
 .section.active {
@@ -106,6 +116,7 @@ main {
 .items-list {
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
 
 .item {
@@ -124,7 +135,7 @@ main {
   align-items: center;
   gap: 1.5rem;
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .item-title {
@@ -150,6 +161,7 @@ main {
   margin-top: 1.5rem;
   padding: 1.5rem;
   border: 1px solid #eee;
+  font-size: 0.75rem;
 }
 
 .detail-view.active {
@@ -163,6 +175,11 @@ main {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
+}
+
+.detail-header h2 {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .detail-content {
@@ -182,8 +199,13 @@ main {
   gap: 1rem;
 }
 
+.detail-info p {
+  font-size: 0.75rem;
+}
+
 .detail-description {
   margin: 1rem 0;
+  font-size: 0.75rem;
 }
 
 .detail-links {
@@ -197,13 +219,8 @@ main {
   border: 1px solid #000;
   text-decoration: none;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   transition: all 0.2s ease;
-}
-
-.detail-links a:hover {
-  background: #000;
-  color: #fff;
 }
 
 /* More Info Button */
@@ -246,6 +263,7 @@ main {
   box-shadow: 0 2px 16px rgba(0,0,0,0.1);
   text-align: center;
   position: relative;
+  font-size: 0.75rem;
 }
 
 .close-btn {
@@ -254,7 +272,7 @@ main {
   right: 1rem;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -264,7 +282,7 @@ footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid #eee;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #666;
 }
 
@@ -274,10 +292,16 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 0 1rem;
   }
 
   .section {
     width: 100%;
+    max-width: 600px;
+  }
+
+  .categories {
+    padding: 0 1rem;
   }
 }
 
@@ -285,6 +309,11 @@ footer {
   .categories {
     gap: 1.5rem;
     font-size: 1rem;
+    padding: 0;
+  }
+  
+  .sections-container {
+    padding: 0;
   }
   
   .detail-content {

@@ -54,7 +54,7 @@ main {
   padding: 0.75rem;
   margin: 0 1rem;
   line-height: 1;
-  filter: blur(0);
+  filter: blur(1px);
 }
 
 .more-info:hover {

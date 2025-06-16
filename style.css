@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Questrial', sans-serif;
-  background-color: #fff;
+  background-color: #f8f8f8;
   color: #000;
   font-size: 0.8rem;
   -webkit-font-smoothing: antialiased;
@@ -45,7 +45,7 @@ main {
 
 .more-info {
   font-size: 2rem;
-  color: black;
+  color: #666;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -96,6 +96,7 @@ main {
   text-align: center;
   transition: all 0.3s ease;
   filter: blur(2px);
+  color: #666;
 }
 
 .category:hover {
@@ -105,6 +106,7 @@ main {
 .category.active {
   font-weight: bold;
   filter: blur(0);
+  color: #000;
 }
 
 .category.active:hover {
@@ -266,7 +268,7 @@ footer {
 }
 
 .modal-content {
-  background: #fff;
+  background: #f8f8f8;
   padding: 2rem 3rem;
   border-radius: 8px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.1);

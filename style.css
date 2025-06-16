@@ -93,6 +93,7 @@ main {
   min-width: 120px;
   text-align: center;
   transition: all 0.3s ease;
+  filter: blur(2px);
 }
 
 .category:hover {
@@ -101,7 +102,7 @@ main {
 
 .category.active {
   font-weight: bold;
-  filter: blur(1px);
+  filter: blur(0);
 }
 
 /* Sections Container */

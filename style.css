@@ -48,15 +48,17 @@ main {
   color: black;
   text-decoration: none;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   background: none;
   border: none;
   padding: 0.75rem;
   margin: 0 1rem;
   line-height: 1;
+  filter: blur(0);
 }
 
 .more-info:hover {
+  filter: blur(2px);
   opacity: 0.7;
 }
 
@@ -97,12 +99,16 @@ main {
 }
 
 .category:hover {
-  opacity: 0.7;
+  filter: blur(3px);
 }
 
 .category.active {
   font-weight: bold;
   filter: blur(0);
+}
+
+.category.active:hover {
+  filter: blur(1px);
 }
 
 /* Sections Container */

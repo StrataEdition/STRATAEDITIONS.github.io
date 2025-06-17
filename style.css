@@ -154,20 +154,17 @@ main {
 }
 
 .item {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #eee;
   cursor: pointer;
-  transition: all 2s ease;
+  padding: 1rem;
+  border-bottom: 1px solid var(--accent-color);
+  transition: all 0.3s ease;
 }
 
 .item-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  font-weight: 400;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  transition: all 2s ease;
+  gap: 1rem;
 }
 
 .item-title, .item-date, .item-venue, .item-artists, .item-artist {
@@ -374,7 +371,7 @@ footer {
   width: 100%;
   max-width: 800px;
   margin: 0 auto 1rem;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .video-slide {

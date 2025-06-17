@@ -1,61 +1,34 @@
-// Category switching
-document.querySelectorAll('.category').forEach(category => {
-  category.addEventListener('click', function() {
-    // Remove active class from all categories
-    document.querySelectorAll('.category').forEach(cat => {
-      cat.classList.remove('active');
-    });
-    
-    // Add active class to clicked category
-    this.classList.add('active');
-    
-    // Hide all sections
-    document.querySelectorAll('.section').forEach(section => {
-      section.classList.remove('active');
-    });
-    
-    // Show target section
-    const target = this.getAttribute('data-target');
-    document.getElementById(target).classList.add('active');
-  });
-});
-
-// Item detail toggling
-document.querySelectorAll('.item').forEach(item => {
-  item.addEventListener('click', function() {
-    const detailId = 'detail-' + this.getAttribute('data-id');
-    const detailView = document.getElementById(detailId);
-    
-    // Close all other detail views
-    document.querySelectorAll('.detail-view').forEach(view => {
-      if (view.id !== detailId) {
-        view.classList.remove('active');
-      }
-    });
-    
-    // Toggle current detail view
-    detailView.classList.toggle('active');
-  });
-});
-
 // Modal functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById("modal");
-  const openBtn = document.getElementById("moreInfoBtn");
-  const closeBtn = document.getElementById("closeModal");
+const modal = document.getElementById('modal');
+const closeModal = document.getElementById('closeModal');
 
-  openBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    modal.style.display = "flex";
-  });
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
 
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
+// Detail view functionality
+document.querySelectorAll('.item').forEach(item => {
+  item.addEventListener('click', () => {
+    const detailId = item.getAttribute('data-id');
+    const detailView = document.getElementById(`detail-${detailId}`);
+    
+    if (detailView) {
+      // Hide all detail views
+      document.querySelectorAll('.detail-view').forEach(view => {
+        view.style.display = 'none';
+      });
+      
+      // Show the selected detail view
+      detailView.style.display = 'block';
+      
+      // Initialize carousel if present
+      setTimeout(initVideoCarousels, 100);
     }
   });
 });
@@ -81,13 +54,15 @@ function initVideoCarousels() {
     }
 
     if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling up
         let newIndex = currentSlide - 1;
         if (newIndex < 0) newIndex = slides.length - 1;
         showSlide(newIndex);
       });
 
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling up
         let newIndex = currentSlide + 1;
         if (newIndex >= slides.length) newIndex = 0;
         showSlide(newIndex);
@@ -95,10 +70,40 @@ function initVideoCarousels() {
     }
 
     thumbnails.forEach((thumb, index) => {
-      thumb.addEventListener('click', () => showSlide(index));
+      thumb.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling up
+        showSlide(index);
+      });
     });
   });
 }
+
+// Close detail view when clicking outside
+document.addEventListener('click', (e) => {
+  const detailViews = document.querySelectorAll('.detail-view');
+  const items = document.querySelectorAll('.item');
+  
+  let clickedInsideDetail = false;
+  let clickedInsideItem = false;
+  
+  detailViews.forEach(view => {
+    if (view.contains(e.target)) {
+      clickedInsideDetail = true;
+    }
+  });
+  
+  items.forEach(item => {
+    if (item.contains(e.target)) {
+      clickedInsideItem = true;
+    }
+  });
+  
+  if (!clickedInsideDetail && !clickedInsideItem) {
+    detailViews.forEach(view => {
+      view.style.display = 'none';
+    });
+  }
+});
 
 // Initialize carousels when detail views are shown
 document.querySelectorAll('.item').forEach(item => {
@@ -106,5 +111,3 @@ document.querySelectorAll('.item').forEach(item => {
     setTimeout(initVideoCarousels, 100); // Small delay to ensure DOM is updated
   });
 }); 
-
-

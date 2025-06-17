@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Questrial', sans-serif;
-  background-color: #f8f8f8;
+  background-color: #fff;
   color: #000;
   font-size: 0.8rem;
   -webkit-font-smoothing: antialiased;
@@ -54,11 +54,11 @@ main {
   padding: 0.75rem;
   margin: 0 1rem;
   line-height: 1;
-  filter: blur(1px);
+  filter: blur(2px);
 }
 
 .more-info:hover {
-  filter: blur(2px);
+  filter: blur(3px);
   opacity: 0.7;
 }
 
@@ -110,7 +110,18 @@ main {
 }
 
 .category.active:hover {
-  filter: blur(1px);
+  filter: blur(0);
+}
+
+/* When a category is active, remove blur from more-info */
+.category.active ~ .more-info,
+.more-info ~ .category.active {
+  filter: blur(0);
+}
+
+.category.active ~ .more-info:hover,
+.more-info ~ .category.active:hover {
+  filter: blur(0);
 }
 
 /* Sections Container */
@@ -145,13 +156,7 @@ main {
   padding: 0.75rem 0;
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  transition: all 0.5s ease;
-  transform-origin: left;
-}
-
-.item:hover {
-  filter: blur(1px);
-  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
 .item-content {
@@ -159,11 +164,12 @@ main {
   align-items: center;
   gap: 2rem;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .item-title {
   min-width: 200px;
+  transition: all 0.3s ease;
 }
 
 .item-date {
@@ -177,6 +183,18 @@ main {
 
 .item-artists, .item-artist {
   flex: 1;
+}
+
+.item:hover .item-title {
+  filter: blur(1px);
+  letter-spacing: 0.1em;
+}
+
+/* Remove hover effects when detail is active */
+.item .detail-view.active ~ .item-content .item-title,
+.item .detail-view.active ~ .item-content:hover .item-title {
+  filter: none;
+  letter-spacing: normal;
 }
 
 /* Detail View */
@@ -269,7 +287,7 @@ footer {
 }
 
 .modal-content {
-  background: #f8f8f8;
+  background: #fff;
   padding: 2rem 3rem;
   border-radius: 8px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.1);
@@ -340,4 +358,4 @@ footer {
   .item-artist {
     min-width: auto;
   }
-}
+} 

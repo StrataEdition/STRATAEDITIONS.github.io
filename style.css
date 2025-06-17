@@ -67,4 +67,36 @@ body {
 .category.active ~ .more-info:hover,
 .more-info ~ .category.active:hover {
   filter: blur(0);
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.item-title {
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item:hover .item-title {
+  filter: blur(1px);
+  letter-spacing: 0.1em;
+}
+
+/* Remove hover effects when detail is active */
+.item .detail-view.active ~ .item-content .item-title,
+.item .detail-view.active ~ .item-content:hover .item-title {
+  filter: none;
+  letter-spacing: normal;
 } 

@@ -14,8 +14,7 @@ window.addEventListener('click', (e) => {
 
 // Navigation functionality
 document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
+  item.addEventListener('click', () => {
     const targetId = item.getAttribute('data-target');
     const targetSection = document.getElementById(targetId);
     
@@ -38,8 +37,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
 
 // Detail view functionality
 document.querySelectorAll('.item').forEach(item => {
-  item.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent event from bubbling up
+  item.addEventListener('click', () => {
     const detailId = item.getAttribute('data-id');
     const detailView = document.getElementById(`detail-${detailId}`);
     
@@ -76,14 +74,14 @@ function initVideoCarousels() {
 
     if (prevBtn && nextBtn) {
       prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent event from bubbling up
+        e.stopPropagation();
         let newIndex = currentSlide - 1;
         if (newIndex < 0) newIndex = slides.length - 1;
         showSlide(newIndex);
       });
 
       nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent event from bubbling up
+        e.stopPropagation();
         let newIndex = currentSlide + 1;
         if (newIndex >= slides.length) newIndex = 0;
         showSlide(newIndex);

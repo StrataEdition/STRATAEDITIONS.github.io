@@ -93,13 +93,14 @@ main {
   padding-bottom: 0.5rem;
   min-width: 120px;
   text-align: center;
-  transition: all 0.3s ease;
-  filter: blur(2px);
+  transition: all 2s ease;
+  filter: blur(3px);
   color: #666;
 }
 
 .category:hover {
-  filter: blur(3px);
+  filter: blur(0);
+  color: #000;
 }
 
 .category.active {

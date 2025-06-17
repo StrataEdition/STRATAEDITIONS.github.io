@@ -12,9 +12,34 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Navigation functionality
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = item.getAttribute('data-target');
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      // Hide all sections
+      document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Show the target section
+      targetSection.style.display = 'block';
+      
+      // Hide all detail views
+      document.querySelectorAll('.detail-view').forEach(view => {
+        view.style.display = 'none';
+      });
+    }
+  });
+});
+
 // Detail view functionality
 document.querySelectorAll('.item').forEach(item => {
-  item.addEventListener('click', () => {
+  item.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent event from bubbling up
     const detailId = item.getAttribute('data-id');
     const detailView = document.getElementById(`detail-${detailId}`);
     
@@ -41,15 +66,11 @@ function initVideoCarousels() {
     const slides = carousel.querySelectorAll('.video-slide');
     const prevBtn = carousel.querySelector('.prev');
     const nextBtn = carousel.querySelector('.next');
-    const thumbnails = carousel.parentElement.querySelectorAll('.thumbnail');
     let currentSlide = 0;
 
     function showSlide(index) {
       slides.forEach(slide => slide.classList.remove('active'));
-      thumbnails.forEach(thumb => thumb.classList.remove('active'));
-      
       slides[index].classList.add('active');
-      thumbnails[index].classList.add('active');
       currentSlide = index;
     }
 
@@ -68,13 +89,6 @@ function initVideoCarousels() {
         showSlide(newIndex);
       });
     }
-
-    thumbnails.forEach((thumb, index) => {
-      thumb.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent event from bubbling up
-        showSlide(index);
-      });
-    });
   });
 }
 
@@ -103,11 +117,4 @@ document.addEventListener('click', (e) => {
       view.style.display = 'none';
     });
   }
-});
-
-// Initialize carousels when detail views are shown
-document.querySelectorAll('.item').forEach(item => {
-  item.addEventListener('click', () => {
-    setTimeout(initVideoCarousels, 100); // Small delay to ensure DOM is updated
-  });
 }); 

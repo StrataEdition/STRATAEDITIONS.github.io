@@ -44,7 +44,7 @@ main {
 }
 
 .more-info {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #666;
   text-decoration: none;
   cursor: pointer;
@@ -54,11 +54,10 @@ main {
   padding: 0.75rem;
   margin: 0 1rem;
   line-height: 1;
-  filter: blur(2px);
+  filter: blur(0);
 }
 
 .more-info:hover {
-  filter: blur(3px);
   opacity: 0.7;
 }
 
@@ -156,7 +155,7 @@ main {
   padding: 0.75rem 0;
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 2s ease;
 }
 
 .item-content {
@@ -165,34 +164,21 @@ main {
   gap: 2rem;
   font-weight: bold;
   font-size: 0.85rem;
+  transition: all 2s ease;
 }
 
-.item-title {
-  min-width: 200px;
-  transition: all 0.3s ease;
+.item-title, .item-date, .item-venue, .item-artists, .item-artist {
+  transition: all 2s ease;
 }
 
-.item-date {
-  min-width: 80px;
-  color: #666;
-}
-
-.item-venue {
-  min-width: 200px;
-}
-
-.item-artists, .item-artist {
-  flex: 1;
-}
-
-.item:hover .item-title {
+.item:hover .item-content {
   filter: blur(1px);
   letter-spacing: 0.1em;
 }
 
 /* Remove hover effects when detail is active */
-.item .detail-view.active ~ .item-content .item-title,
-.item .detail-view.active ~ .item-content:hover .item-title {
+.item .detail-view.active ~ .item-content,
+.item .detail-view.active ~ .item-content:hover {
   filter: none;
   letter-spacing: normal;
 }

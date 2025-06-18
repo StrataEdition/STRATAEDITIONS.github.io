@@ -103,25 +103,39 @@ main {
   letter-spacing: 0.1em;
 }
 
-.category:hover,
 .category.active {
+  filter: blur(0);
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* When hovering a non-active category, unblur it and blur the active */
+.category:not(.active):hover {
   filter: blur(0);
   color: #1a1a1a;
 }
 
-.category.active {
-  font-weight: 500;
-}
-
-/* When hovering over any category, blur all other non-active categories */
-.categories:hover .category:not(:hover):not(.active) {
+.category:not(.active):hover ~ .category.active,
+.category.active:hover ~ .category:not(.active):hover {
   filter: blur(3px);
   color: #666;
 }
 
-/* Remove hover styles when a category is clicked */
-.category.active:hover {
+/* For the case where the first is active and you hover the second, or vice versa */
+.categories:hover .category.active:not(:hover) {
+  filter: blur(3px);
+  color: #666;
+}
+
+.categories:hover .category:not(.active):hover {
   filter: blur(0);
+  color: #1a1a1a;
+}
+
+/* Remove blur from active if not hovering any non-active */
+.categories:not(:hover) .category.active {
+  filter: blur(0);
+  color: #1a1a1a;
 }
 
 /* Sections Container */

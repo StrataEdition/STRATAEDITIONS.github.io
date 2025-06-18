@@ -183,10 +183,15 @@ main {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   transition: all 2s ease;
+  white-space: nowrap;
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 
 .item-title, .item-date, .item-venue, .item-artists, .item-artist {
-  transition: all 2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item:hover .item-content {
@@ -360,9 +365,13 @@ footer {
   }
 
   .item-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
 
   .item-title,
@@ -409,8 +418,13 @@ footer {
     font-size: 0.95rem;
   }
   .item-content {
-    gap: 0.2rem;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.95rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
   .detail-content {
     gap: 0.5rem;

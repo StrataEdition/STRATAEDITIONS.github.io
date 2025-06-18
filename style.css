@@ -9,13 +9,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
 body {
-   font-family: "Atkinson Hyperlegible Mono", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 558;
-  font-style: normal;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
   background-color: #fff;
   color: #1a1a1a;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;

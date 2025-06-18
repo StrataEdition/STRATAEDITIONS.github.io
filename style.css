@@ -376,26 +376,22 @@ footer {
 
 @media (max-width: 600px) {
   body {
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: 0.2rem;
+    font-size: 0.85rem;
   }
   .content-wrapper {
-    padding-top: 1rem;
-    gap: 1rem;
+    padding-top: 0.5rem;
+    gap: 0.5rem;
   }
   .categories {
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-    padding: 0;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+    gap: 0.2rem;
   }
   .category, .more-info {
-    min-width: 0;
-    width: 100%;
-    padding: 1rem 0;
-    font-size: 1.2rem;
-    border-radius: 8px;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    border-radius: 6px;
   }
   .sections-container {
     padding: 0;
@@ -406,21 +402,18 @@ footer {
     padding: 0;
   }
   .items-list {
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .item {
-    padding: 1rem 0.5rem;
-    font-size: 1.1rem;
+    padding: 0.5rem 0.2rem;
+    font-size: 0.95rem;
   }
   .item-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 1rem;
+    gap: 0.2rem;
+    font-size: 0.95rem;
   }
   .detail-content {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0;
   }
   .detail-image,
@@ -431,22 +424,20 @@ footer {
     height: auto;
   }
   .detail-view {
-    padding: 1rem 0.2rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.1rem;
+    font-size: 0.85rem;
   }
   .modal-content {
-    padding: 1rem 0.5rem;
-    font-size: 1rem;
-    max-width: 98vw;
+    padding: 0.5rem 0.2rem;
+    font-size: 0.9rem;
+    max-width: 99vw;
   }
   .video-embeds {
-    gap: 0.5rem;
+    gap: 0.2rem;
   }
   .detail-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
+    gap: 0.2rem;
+    padding-bottom: 0.2rem;
   }
 }
 
@@ -470,4 +461,15 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+/* Blur and darken everything except modal when modal is open */
+.site-blur.blur-active {
+  filter: blur(6px) grayscale(0.2) brightness(0.7);
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.modal-overlay[style*="display: flex"] {
+  background: rgba(0,0,0,0.5);
 } 

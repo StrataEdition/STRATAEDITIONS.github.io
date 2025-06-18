@@ -374,6 +374,82 @@ footer {
   }
 }
 
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  .content-wrapper {
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+  .categories {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .category, .more-info {
+    min-width: 0;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+  .sections-container {
+    padding: 0;
+    gap: 1rem;
+  }
+  .section {
+    max-width: 100vw;
+    padding: 0;
+  }
+  .items-list {
+    gap: 1rem;
+  }
+  .item {
+    padding: 1rem 0.5rem;
+    font-size: 1.1rem;
+  }
+  .item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+  .detail-image,
+  .bandcamp-embed,
+  .video-embeds iframe {
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: auto;
+  }
+  .detail-view {
+    padding: 1rem 0.2rem;
+    font-size: 0.95rem;
+  }
+  .modal-content {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    max-width: 98vw;
+  }
+  .video-embeds {
+    gap: 0.5rem;
+  }
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
 /* Minimal YouTube video embeds for details panel */
 .video-embeds {
   display: flex;

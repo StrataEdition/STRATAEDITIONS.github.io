@@ -370,4 +370,26 @@ footer {
   .item-artist {
     min-width: auto;
   }
+}
+
+/* Minimal YouTube video embeds for details panel */
+.video-embeds {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.video-embeds iframe {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  background: #000;
+  border: none;
+}
+@media (max-width: 700px) {
+  .video-embeds {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 } 

@@ -50,7 +50,7 @@ main {
 
 .more-info {
   font-size: 1.4rem;
-  color: #ddd;
+  color: #ccc;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,11 +59,11 @@ main {
   padding: 0.75rem;
   margin: 0 1rem;
   line-height: 1;
-  filter: blur(2px);
+  filter: none;
 }
 
 .more-info:hover {
-  filter: blur(0);
+  filter: none;
   color: #1a1a1a;
 }
 

@@ -32,14 +32,30 @@ main {
   justify-content: center;
 }
 
-/* Centered Logo */
-.centered-content {
+/* Always center logo/navigation in viewport, all screen sizes */
+.centered-content-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
-  gap: 1.5rem;
+  justify-content: center;
+  width: 100vw;
+  pointer-events: none;
+  max-width: 400px;
+  width: 90vw;
+  padding: 0 0.5rem;
+}
+
+.centered-content {
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+  gap: 0.7rem;
+  pointer-events: auto;
 }
 
 .logo {
@@ -91,6 +107,11 @@ main {
   width: 100%;
   padding: 0 2rem;
   margin-bottom: 3rem;
+  margin-top: 1rem;
+  max-width: 400px;
+  width: 100%;
+  gap: 0.2rem;
+  justify-content: space-between;
 }
 
 .category {
@@ -381,29 +402,13 @@ footer {
     font-size: 0.75rem;
   }
   .centered-content-wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 400px;
-    width: 90vw;
-    gap: 0.7rem;
-    padding: 0 0.5rem;
-    z-index: 10;
+    /* No override, keep centering */
   }
   .centered-content {
-    max-width: 400px;
-    width: 100%;
-    align-items: center;
-    gap: 0.7rem;
+    /* No override, keep centering */
   }
   .categories {
-    margin-top: 1rem;
-    max-width: 400px;
-    width: 100%;
-    font-size: 0.85rem;
-    gap: 0.2rem;
-    justify-content: space-between;
+    /* No override, keep centering */
   }
   .content-wrapper {
     margin-top: 100vh;

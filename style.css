@@ -42,8 +42,6 @@ main {
   width: 100%;
   padding: 0 0.5rem;
   box-sizing: border-box;
-  min-height: 220px;
-  height: 220px;
   margin: 0 auto;
 }
 
@@ -92,7 +90,7 @@ main {
   margin: 0 auto;
   width: 100%;
   padding-top: 4rem;
-  margin-top: 220px;
+  margin-top: 40px;
 }
 
 /* Navigation */
@@ -411,8 +409,7 @@ footer {
     font-size: 0.75rem;
   }
   .centered-content-wrapper {
-    min-height: 170px;
-    height: 170px;
+    /* No min-height/height */
   }
   .centered-content {
     /* No override, keep centering */
@@ -421,7 +418,7 @@ footer {
     /* No override, keep centering */
   }
   .content-wrapper {
-    margin-top: 170px;
+    margin-top: 24px;
     max-width: 400px;
     width: 90vw;
     padding: 0;

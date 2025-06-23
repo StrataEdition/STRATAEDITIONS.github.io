@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var header = document.getElementById('centeredHeader');
     if (content && header) {
       var headerHeight = header.getBoundingClientRect().height;
-      content.style.paddingTop = headerHeight + (headerHeight*0.5);
+      content.style.paddingTop = (headerHeight * 1.5) + 'px';
     }
   }
   setContentPadding();

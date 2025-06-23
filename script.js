@@ -1,10 +1,12 @@
 // Category switching
 document.addEventListener('DOMContentLoaded', function () {
-  // Dynamically set .content-wrapper padding-top to viewport height
+  // Dynamically set .content-wrapper padding-top to the height of the logo/nav
   function setContentPadding() {
     var content = document.querySelector('.content-wrapper');
-    if (content) {
-      content.style.paddingTop = window.innerHeight + 'px';
+    var header = document.getElementById('centeredHeader');
+    if (content && header) {
+      var headerHeight = header.getBoundingClientRect().height;
+      content.style.paddingTop = headerHeight + 'px';
     }
   }
   setContentPadding();

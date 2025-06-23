@@ -32,27 +32,14 @@ main {
   justify-content: center;
 }
 
-/* Fixed logo and navigation at the center of the viewport */
-.centered-content-wrapper {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  pointer-events: none;
-}
-
+/* Centered Logo */
 .centered-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
   gap: 1.5rem;
-  pointer-events: auto;
 }
 
 .logo {
@@ -80,20 +67,30 @@ main {
   color: #1a1a1a;
 }
 
-/* Add top margin to content so it's below the viewport */
+/* Content Wrapper */
 .content-wrapper {
-  margin-top: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 4rem;
 }
 
 /* Navigation */
 .categories {
-  margin-top: 1.5rem;
-  position: static;
-  transform: none;
-  z-index: 11;
-  background: none;
-  width: auto;
-  pointer-events: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
 }
 
 .category {
@@ -383,15 +380,14 @@ footer {
     padding: 0.2rem;
     font-size: 0.75rem;
   }
-  .centered-content-wrapper {
-    top: 50%;
-    gap: 0.7rem;
+  .content-wrapper {
+    padding-top: 0.5rem;
+    gap: 0.5rem;
   }
   .categories {
-    margin-top: 1rem;
-  }
-  .content-wrapper {
-    margin-top: 100vh;
+    font-size: 0.85rem;
+    margin-bottom: 0.7rem;
+    gap: 0.2rem;
   }
   .category, .more-info {
     padding: 0.5rem 0;

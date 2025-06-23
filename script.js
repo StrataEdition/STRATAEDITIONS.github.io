@@ -1,5 +1,15 @@
 // Category switching
 document.addEventListener('DOMContentLoaded', function () {
+  // Dynamically set .content-wrapper padding-top to viewport height
+  function setContentPadding() {
+    var content = document.querySelector('.content-wrapper');
+    if (content) {
+      content.style.paddingTop = window.innerHeight + 'px';
+    }
+  }
+  setContentPadding();
+  window.addEventListener('resize', setContentPadding);
+
   // Hide all sections initially
   var sections = document.querySelectorAll('.section');
   sections.forEach(function (section) {

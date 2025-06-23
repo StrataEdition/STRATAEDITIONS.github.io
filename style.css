@@ -26,13 +26,11 @@ body {
 }
 
 .main-vertical-center {
-  flex: 1 0 auto;
-  min-height: 0;
+  min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 60px); /* 60px for footer */
 }
 
 main {
@@ -289,13 +287,13 @@ main {
 
 /* Footer */
 footer {
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
   width: 100vw;
   text-align: center;
   margin-top: 0;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0 1.5rem 0;
   border-top: 1px solid #eee;
   font-size: 0.5rem;
   color: #666;

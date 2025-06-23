@@ -13,7 +13,7 @@ body {
   font-weight: 400;
   background-color: #fff;
   color: #1a1a1a;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
@@ -49,7 +49,7 @@ main {
 }
 
 .more-info {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: #ccc;
   text-decoration: none;
   cursor: pointer;
@@ -83,7 +83,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   font-weight: bold;
   max-width: 800px;
@@ -173,7 +173,7 @@ main {
   padding: 0.75rem 0;
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  transition: all 2s ease;
+  transition: all 0.3s ease;
 }
 
 .item-content {
@@ -181,18 +181,18 @@ main {
   align-items: center;
   gap: 2rem;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   letter-spacing: 0.05em;
-  transition: all 2s ease;
+  transition: all 0.3s ease;
 }
 
 .item-title, .item-date, .item-venue, .item-artists, .item-artist {
-  transition: all 2s ease;
+  transition: all 0.3s ease;
+  font-size: 0.6rem;
 }
 
 .item:hover .item-content {
   filter: blur(1px);
-  letter-spacing: 0.1em;
 }
 
 /* Remove hover effects when detail is active */
@@ -239,7 +239,7 @@ main {
 }
 
 .detail-header h2 {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.1em;
 }
@@ -263,14 +263,14 @@ main {
 }
 
 .detail-info p {
-  font-size: 0.65rem;
+  font-size: 0.5rem;
   line-height: 1.6;
   font-weight: 400;
 }
 
 .detail-description {
   margin: 1rem 0;
-  font-size: 0.65rem;
+  font-size: 0.5rem;
   line-height: 1.6;
   color: #444;
   font-weight: 400;
@@ -283,7 +283,7 @@ footer {
   margin-top: 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid #eee;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   color: #666;
 }
 
@@ -308,7 +308,7 @@ footer {
   box-shadow: 0 2px 16px rgba(0,0,0,0.1);
   text-align: center;
   position: relative;
-  font-size: 0.65rem;
+  font-size: 0.5rem;
   max-width: 400px;
   width: 90%;
 }

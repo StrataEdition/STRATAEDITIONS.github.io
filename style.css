@@ -32,13 +32,10 @@ main {
   justify-content: center;
 }
 
-/* Centered Logo - now fixed at the top */
+/* Centered Logo - now lower and without shadow */
 .centered-content {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 100;
+  position: relative;
+  margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +43,6 @@ main {
   background: #fff;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .logo {
@@ -76,7 +72,7 @@ main {
 
 /* Content Wrapper */
 .content-wrapper {
-  margin-top: 110px; /* space for fixed logo */
+  margin-top: 0;
   padding-top: 2rem;
   display: flex;
   flex-direction: column;

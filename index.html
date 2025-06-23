@@ -4,201 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>STRATA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
+  <header class="fixed-header">
     <div class="centered-content">
       <img src="images/strataLogo.png" alt="STRATA logo" class="logo" />
     </div>
-
-    <div class="content-wrapper">
-      <div class="categories">
-        <div class="category active" data-target="label">LABEL</div>
-        <a href="#" id="moreInfoBtn" class="more-info">╋</a>
-        <div class="category" data-target="shows">SHOWS</div>
-      </div>
-
-      <div class="sections-container">
-        <section id="label" class="section active">
-          <div class="items-list">
-            <div class="item" data-id="release1">
-              <div class="item-content">
-                <span class="item-title">ETTRICK SITES</span>
-                <span class="item-date">18.01.25</span>
-                <span class="item-artist">GLOVES TO BOUQUET</span>
-              </div>
-
-              <div id="detail-release1" class="detail-view">
-                <div class="detail-header">
-                  <h2>GLOVES TO BOUQUET: ETTRICK SITES</h2>
-                  <div class="item-date">18.01.25</div>
-                </div>
-                <div class="detail-content">
-                  <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <img src="images/ettrickSites.jpg" alt="Album Cover" class="detail-image">
-                    <div class="bandcamp-embed">
-                      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=4057023817/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" seamless><a href="https://strataedition.bandcamp.com/album/ettrick-sites">Ettrick Sites by Gloves To Bouqet</a></iframe>
-                    </div>
-                  </div>
-                  <div class="detail-info">
-                    <div class="detail-description">
-                      <p>"Named after Lock Ettrick in Scotland's Dumfries and Galloway where it was created, this new AV collaboration evokes a primeval digital universe." - <a href="https://github.com/StrataEdition/StrataEditions.github.io/blob/638cbd847b0d2ae748a65e63de5a3a45e84150df/images/EttrickSitesReview.jpg" target="_blank">The Wire</a></p>
-                    </div>
-                    <div class="video-embeds">
-                      <iframe src="https://www.youtube.com/embed/AvJs1v066kA?rel=0&modestbranding=1&controls=1&showinfo=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                      <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?rel=0&modestbranding=1&controls=1&showinfo=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="item" data-id="release2">
-              <div class="item-content">
-                <span class="item-title">SCANDISK</span>
-                <span class="item-date">29.11.24</span>
-                <span class="item-artist">PARTIAL DEFRAG</span>
-              </div>
-              <div id="detail-release2" class="detail-view">
-                <div class="detail-header">
-                  <h2>SCANDISK</h2>
-                  <div class="item-date">29.11.24</div>
-                </div>
-                <div class="detail-content">
-                  <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <img src="images/ScanDiskCover.jpg" alt="Album Cover" class="detail-image">
-                    <div class="bandcamp-embed">
-                      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1119581680/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" seamless><a href="https://strataedition.bandcamp.com/album/scandisk">ScanDisk by Partial Defrag</a></iframe>
-                    </div>
-                  </div>
-                  <div class="detail-info">
-                    <div class="detail-description">
-                      <p>"Snapshots of voices and digital debris conjuring up a journey through London's nocturnal streets" - <a href="https://thequietus.com/quietus-reviews/partial-defrag-scandisk-review/" target="_blank">The Quietus</a></p>
-                      </br>
-                      <p>"Prickly compositions pulled from the dregs of hard drive compression" - <a href="https://www.ninaprotocol.com/articles/partial-defrag-scandisk" target="_blank">NINA Protocol</a></p>
-                    </div>
-                    <div class="video-embeds">
-                      <iframe src="https://www.youtube.com/embed/npcC32gz2KQ?rel=0&modestbranding=1&controls=1&showinfo=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe src="https://www.youtube.com/embed/3WujZG_iTCk?rel=0&modestbranding=1&controls=1&showinfo=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                      <iframe src="https://www.youtube.com/embed/mrEraBWjmkA?rel=0&modestbranding=1&controls=1&showinfo=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="shows" class="section">
-          <div class="items-list">
-            <!-- Show 1 -->
-            <div class="item" data-id="show4">
-              <div class="item-content">
-                <span class="item-title">STRATA 4</span>
-                <span class="item-date">17.07.25</span>
-                <span class="item-venue">THE ENGINE ROOMS, LONDON</span>
-                <span class="item-artists">LAILA SAKINI, PARTIAL DEFRAG, ONAS UENO, CASTLE MAOL</span>
-              </div>
-
-              <div id="detail-show4" class="detail-view">
-                <div class="detail-header">
-                  <h2>STRATA 4</h2>
-                  <div class="item-date">17.07.25</div>
-                </div>
-                <div class="detail-content">
-                 <img src="images/strata4Poster.jpg" alt="Show Poster" class="detail-image">
-                  <div class="detail-info">
-                    <p><strong>Venue:</strong> THE ENGINE ROOMS, LONDON</p>
-                    <p><strong>Artists:</strong> Laila Sakini, Partial Defrag, Onas Ueno, Castle Maol</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Show 3 -->
-            <div class="item" data-id="show1">
-              <div class="item-content">
-                <span class="item-title">ETTRICK SITES EP LAUNCH</span>
-                <span class="item-date">18.01.25</span>
-                <span class="item-venue">RCA VISLAB, LONDON</span>
-                <span class="item-artists">GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG</span>
-              </div>
-
-              <div id="detail-show1" class="detail-view">
-                <div class="detail-header">
-                  <h2>ETTRICK SITES EP LAUNCH</h2>
-                  <div class="item-date">18.01.25</div>
-                </div>
-                <div class="detail-content">
-                  <img src="images/EttrickPoster.png" alt="Show Poster" class="detail-image">
-                  <div class="detail-info">
-                    <p><strong>Venue:</strong> RCA VISLAB, LONDON</p>
-                    <p><strong>Artists:</strong> Gloves to Bouquet, Castle Maol, Partial Defrag</p>
-                    <div class="detail-description">
-                      <p>Launch event for Gloves to Bouquet's debut EP on STRATA.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Show 4 -->
-            <div class="item" data-id="show2">
-              <div class="item-content">
-                <span class="item-title">SCANDISK EP LAUNCH</span>
-                <span class="item-date">06.12.24</span>
-                <span class="item-venue">GOLDSMITHS SPATLAB W/ IKLECTIK</span>
-                <span class="item-artists">PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS</span>
-              </div>
-
-              <div id="detail-show2" class="detail-view">
-                <div class="detail-header">
-                  <h2>SCANDISK EP LAUNCH</h2>
-                  <div class="item-date">06.12.24</div>
-                </div>
-                <div class="detail-content">
-                  <img src="images/ScanDiskLaunchPoster.jpg" alt="Show Poster" class="detail-image">
-                  <div class="detail-info">
-                    <p><strong>Venue:</strong> GOLDSMITHS SPATLAB W/ IKLECTIK</p>
-                    <p><strong>Artists:</strong> Partial Defrag, Micheal-Jon Mizra, Isidora Edwards</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Show 5 -->
-            <div class="item" data-id="show3">
-              <div class="item-content">
-                <span class="item-title">STRATA+0.1</span>
-                <span class="item-date">11.11.24</span>
-                <span class="item-venue">SPANNERS, LONDON</span>
-                <span class="item-artists">PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+</span>
-              </div>
-
-              <div id="detail-show3" class="detail-view">
-                <div class="detail-header">
-                  <h2>STRATA+0.1</h2>
-                  <div class="item-date">11.11.24</div>
-                </div>
-                <div class="detail-content">
-                  <div class="detail-info">
-                    <p><strong>Venue:</strong> SPANNERS, LONDON</p>
-                    <p><strong>Artists:</strong> Partial Defrag, ANS M, Castle Maol, Veronica+</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+    <div class="categories">
+      <div class="category active" data-target="label">LABEL</div>
+      <a href="#" id="moreInfoBtn" class="more-info">╋</a>
+      <div class="category" data-target="shows">SHOWS</div>
     </div>
-  </main>
+  </header>
+  <div class="content-wrapper">
+    <div class="sections-container">
+      <section id="label" class="section active">
+        <div class="items-list">
+          <div class="item" data-id="release1">
+            <div class="item-content">
+              <span class="item-title">ETTRICK SITES</span>
+              <span class="item-date">18.01.25</span>
+              <span class="item-artist">GLOVES TO BOUQUET</span>
+            </div>
+
+            <div id="detail-release1" class="detail-view">
+              <div class="detail-header">
+                <h2>GLOVES TO BOUQUET: ETTRICK SITES</h2>
+                <div class="item-date">18.01.25</div>
+              </div>
+              <div class="detail-content">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <img src="images/ettrickSites.jpg" alt="Album Cover" class="detail-image">
+                  <div class="bandcamp-embed">
+                    <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=4057023817/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" seamless><a href="https://strataedition.bandcamp.com/album/ettrick-sites">Ettrick Sites by Gloves To Bouqet</a></iframe>
+                  </div>
+                </div>
+                <div class="detail-info">
+                  <div class="detail-description">
+                    <p>"Named after Lock Ettrick in Scotland's Dumfries and Galloway where it was created, this new AV collaboration evokes a primeval digital universe." - <a href="https://github.com/StrataEdition/StrataEditions.github.io/blob/638cbd847b0d2ae748a65e63de5a3a45e84150df/images/EttrickSitesReview.jpg" target="_blank">The Wire</a></p>
+                  </div>
+                  <div class="video-embeds">
+                    <iframe src="https://www.youtube.com/embed/AvJs1v066kA?rel=0&modestbranding=1&controls=1&showinfo=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/aFJNOryu5lU?rel=0&modestbranding=1&controls=1&showinfo=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item" data-id="release2">
+            <div class="item-content">
+              <span class="item-title">SCANDISK</span>
+              <span class="item-date">29.11.24</span>
+              <span class="item-artist">PARTIAL DEFRAG</span>
+            </div>
+            <div id="detail-release2" class="detail-view">
+              <div class="detail-header">
+                <h2>SCANDISK</h2>
+                <div class="item-date">29.11.24</div>
+              </div>
+              <div class="detail-content">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <img src="images/ScanDiskCover.jpg" alt="Album Cover" class="detail-image">
+                  <div class="bandcamp-embed">
+                    <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1119581680/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" seamless><a href="https://strataedition.bandcamp.com/album/scandisk">ScanDisk by Partial Defrag</a></iframe>
+                  </div>
+                </div>
+                <div class="detail-info">
+                  <div class="detail-description">
+                    <p>"Snapshots of voices and digital debris conjuring up a journey through London's nocturnal streets" - <a href="https://thequietus.com/quietus-reviews/partial-defrag-scandisk-review/" target="_blank">The Quietus</a></p>
+                    </br>
+                    <p>"Prickly compositions pulled from the dregs of hard drive compression" - <a href="https://www.ninaprotocol.com/articles/partial-defrag-scandisk" target="_blank">NINA Protocol</a></p>
+                  </div>
+                  <div class="video-embeds">
+                    <iframe src="https://www.youtube.com/embed/npcC32gz2KQ?rel=0&modestbranding=1&controls=1&showinfo=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                      <iframe src="https://www.youtube.com/embed/3WujZG_iTCk?rel=0&modestbranding=1&controls=1&showinfo=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/mrEraBWjmkA?rel=0&modestbranding=1&controls=1&showinfo=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="shows" class="section">
+        <div class="items-list">
+          <!-- Show 1 -->
+          <div class="item" data-id="show4">
+            <div class="item-content">
+              <span class="item-title">STRATA 4</span>
+              <span class="item-date">17.07.25</span>
+              <span class="item-venue">THE ENGINE ROOMS, LONDON</span>
+              <span class="item-artists">LAILA SAKINI, PARTIAL DEFRAG, ONAS UENO, CASTLE MAOL</span>
+            </div>
+
+            <div id="detail-show4" class="detail-view">
+              <div class="detail-header">
+                <h2>STRATA 4</h2>
+                <div class="item-date">17.07.25</div>
+              </div>
+              <div class="detail-content">
+               <img src="images/strata4Poster.jpg" alt="Show Poster" class="detail-image">
+                <div class="detail-info">
+                  <p><strong>Venue:</strong> THE ENGINE ROOMS, LONDON</p>
+                  <p><strong>Artists:</strong> Laila Sakini, Partial Defrag, Onas Ueno, Castle Maol</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Show 3 -->
+          <div class="item" data-id="show1">
+            <div class="item-content">
+              <span class="item-title">ETTRICK SITES EP LAUNCH</span>
+              <span class="item-date">18.01.25</span>
+              <span class="item-venue">RCA VISLAB, LONDON</span>
+              <span class="item-artists">GLOVES TO BOUQUET, CASTLE MAOL, PARTIAL DEFRAG</span>
+            </div>
+
+            <div id="detail-show1" class="detail-view">
+              <div class="detail-header">
+                <h2>ETTRICK SITES EP LAUNCH</h2>
+                <div class="item-date">18.01.25</div>
+              </div>
+              <div class="detail-content">
+                <img src="images/EttrickPoster.png" alt="Show Poster" class="detail-image">
+                <div class="detail-info">
+                  <p><strong>Venue:</strong> RCA VISLAB, LONDON</p>
+                  <p><strong>Artists:</strong> Gloves to Bouquet, Castle Maol, Partial Defrag</p>
+                  <div class="detail-description">
+                    <p>Launch event for Gloves to Bouquet's debut EP on STRATA.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Show 4 -->
+          <div class="item" data-id="show2">
+            <div class="item-content">
+              <span class="item-title">SCANDISK EP LAUNCH</span>
+              <span class="item-date">06.12.24</span>
+              <span class="item-venue">GOLDSMITHS SPATLAB W/ IKLECTIK</span>
+              <span class="item-artists">PARTIAL DEFRAG, MICHEAL-JON MIZRA, ISIDORA EDWARDS</span>
+            </div>
+
+            <div id="detail-show2" class="detail-view">
+              <div class="detail-header">
+                <h2>SCANDISK EP LAUNCH</h2>
+                <div class="item-date">06.12.24</div>
+              </div>
+              <div class="detail-content">
+                <img src="images/ScanDiskLaunchPoster.jpg" alt="Show Poster" class="detail-image">
+                <div class="detail-info">
+                  <p><strong>Venue:</strong> GOLDSMITHS SPATLAB W/ IKLECTIK</p>
+                  <p><strong>Artists:</strong> Partial Defrag, Micheal-Jon Mizra, Isidora Edwards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Show 5 -->
+          <div class="item" data-id="show3">
+            <div class="item-content">
+              <span class="item-title">STRATA+0.1</span>
+              <span class="item-date">11.11.24</span>
+              <span class="item-venue">SPANNERS, LONDON</span>
+              <span class="item-artists">PARTIAL DEFRAG, ANS M, CASTLE MAOL, VERONICA+</span>
+            </div>
+
+            <div id="detail-show3" class="detail-view">
+              <div class="detail-header">
+                <h2>STRATA+0.1</h2>
+                <div class="item-date">11.11.24</div>
+              </div>
+              <div class="detail-content">
+                <div class="detail-info">
+                  <p><strong>Venue:</strong> SPANNERS, LONDON</p>
+                  <p><strong>Artists:</strong> Partial Defrag, ANS M, Castle Maol, Veronica+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025, STRATA</p>

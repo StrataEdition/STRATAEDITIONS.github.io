@@ -43,11 +43,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  pointer-events: none;
   max-width: 400px;
-  width: 90vw;
+  width: 100%;
   padding: 0 0.5rem;
+  box-sizing: border-box;
 }
 
 .centered-content {
@@ -56,6 +55,9 @@ main {
   align-items: center;
   gap: 0.7rem;
   pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {

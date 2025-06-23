@@ -49,7 +49,6 @@ main {
   box-sizing: border-box;
   min-height: 220px;
   height: 220px;
-  margin: 0;
 }
 
 .centered-content {
@@ -97,7 +96,7 @@ main {
   margin: 0 auto;
   width: 100%;
   padding-top: 4rem;
-  padding-top: 240px;
+  margin-top: 220px;
 }
 
 /* Navigation */
@@ -426,7 +425,7 @@ footer {
     /* No override, keep centering */
   }
   .content-wrapper {
-    padding-top: 180px;
+    margin-top: 170px;
     max-width: 400px;
     width: 90vw;
     padding: 0;

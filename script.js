@@ -1,22 +1,26 @@
 // Category switching
-document.querySelectorAll('.category').forEach(category => {
-  category.addEventListener('click', function() {
-    // Remove active class from all categories
-    document.querySelectorAll('.category').forEach(cat => {
-      cat.classList.remove('active');
+document.addEventListener('DOMContentLoaded', function () {
+  // Hide all sections initially
+  var sections = document.querySelectorAll('.section');
+  sections.forEach(function (section) {
+    section.classList.remove('active');
+  });
+
+  // Navigation click handler
+  var categories = document.querySelectorAll('.category');
+  categories.forEach(function (cat) {
+    cat.addEventListener('click', function () {
+      // Remove active from all
+      categories.forEach(function (c) { c.classList.remove('active'); });
+      sections.forEach(function (section) { section.classList.remove('active'); });
+      // Add active to clicked
+      cat.classList.add('active');
+      var target = cat.getAttribute('data-target');
+      var section = document.getElementById(target);
+      if (section) {
+        section.classList.add('active');
+      }
     });
-    
-    // Add active class to clicked category
-    this.classList.add('active');
-    
-    // Hide all sections
-    document.querySelectorAll('.section').forEach(section => {
-      section.classList.remove('active');
-    });
-    
-    // Show target section
-    const target = this.getAttribute('data-target');
-    document.getElementById(target).classList.add('active');
   });
 });
 

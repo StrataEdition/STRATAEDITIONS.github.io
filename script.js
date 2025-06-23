@@ -1,17 +1,5 @@
 // Category switching
 document.addEventListener('DOMContentLoaded', function () {
-  // Dynamically set .content-wrapper padding-top to the height of the logo/nav
-  function setContentPadding() {
-    var content = document.querySelector('.content-wrapper');
-    var header = document.getElementById('centeredHeader');
-    if (content && header) {
-      var headerHeight = header.getBoundingClientRect().height;
-      content.style.paddingTop = (headerHeight * 1.5) + 'px';
-    }
-  }
-  setContentPadding();
-  window.addEventListener('resize', setContentPadding);
-
   // Hide all sections initially
   var sections = document.querySelectorAll('.section');
   sections.forEach(function (section) {

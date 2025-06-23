@@ -94,6 +94,7 @@ main {
   margin: 0 auto;
   width: 100%;
   padding-top: 4rem;
+  margin-top: 260px;
 }
 
 /* Navigation */
@@ -421,7 +422,7 @@ footer {
     /* No override, keep centering */
   }
   .content-wrapper {
-    margin-top: 100vh;
+    margin-top: 200px;
     max-width: 400px;
     width: 90vw;
     padding: 0;

@@ -25,13 +25,7 @@ body {
   flex-direction: column;
 }
 
-.main-vertical-center {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+.main-vertical-center { display: none !important; }
 
 main {
   flex: 1;
@@ -288,16 +282,15 @@ main {
 /* Footer */
 footer {
   position: static;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  text-align: center;
-  margin-top: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 0 auto;
   padding: 1.5rem 0 1.5rem 0;
   border-top: 1px solid #eee;
   font-size: 0.5rem;
   color: #666;
   background: #fff;
+  text-align: center;
   z-index: 200;
 }
 
@@ -494,3 +487,29 @@ footer {
 }
 
 header.fixed-header { display: none !important; } 
+
+.fixed-center-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.fixed-center-overlay .centered-content,
+.fixed-center-overlay .categories {
+  pointer-events: auto;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50vh;
+  /* ensures content starts below the overlay */
+} 

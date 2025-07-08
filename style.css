@@ -507,7 +507,7 @@ footer {
 /* --- Adjusted top-container to be visually lower, not fixed --- */
 .top-container {
   position: static;
-  width: 100vw;
+  width: 100%; /* use 100% instead of 100vw to avoid overflow */
   z-index: 100;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -515,16 +515,31 @@ footer {
   padding-bottom: 1rem;
   display: flex;
   justify-content: center;
-  margin-top: 10vh; /* bring it down visually */
+  margin-top: 10vh;
 }
 
 .bottom-container {
   position: relative;
-  margin-top: 2rem; /* just a small gap below top-container */
+  width: 100%; /* ensure full width */
+  margin-top: 2rem;
   min-height: 0;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  align-items: center; /* center the content horizontally */
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding-top and margin-top already set to 0 above */
+}
+
+.sections-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -536,6 +551,10 @@ footer {
   .bottom-container {
     margin-top: 1rem;
   }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Ensure main takes full height for flex layout */

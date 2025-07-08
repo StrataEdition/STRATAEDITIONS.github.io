@@ -510,7 +510,6 @@ footer {
   width: 100%; /* use 100% instead of 100vw to avoid overflow */
   z-index: 100;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   padding-top: 2rem;
   padding-bottom: 1rem;
   display: flex;
@@ -553,21 +552,46 @@ footer {
   }
 }
 
+/* --- Fit main area to viewport height and remove top-container border --- */
+html, body {
+  height: 100%;
+}
+
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
 
-/* Ensure main takes full height for flex layout */
 main {
+  flex: 1 1 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-body {
-  min-height: 100vh;
+.top-container {
+  position: static;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.bottom-container {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  min-height: 0;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* Remove top padding from .content-wrapper since .bottom-container handles spacing */

@@ -558,10 +558,10 @@ html, body {
 }
 
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  min-height: 0; /* remove min-height: 100vh */
 }
 
 main {
@@ -569,6 +569,7 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 10vh; /* push both containers down */
 }
 
 .top-container {
@@ -580,13 +581,13 @@ main {
   padding-bottom: 1rem;
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  /* margin-top removed */
 }
 
 .bottom-container {
   position: relative;
   width: 100%;
-  margin-top: 2rem;
+  /* margin-top removed */
   min-height: 0;
   flex: 1 1 auto;
   display: flex;

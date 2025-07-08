@@ -1,4 +1,6 @@
-/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+
+/* Reset & Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,10 +8,16 @@
   transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Space Grotesk', Arial, sans-serif;
   font-weight: 400;
   background-color: #fff;
   color: #1a1a1a;
@@ -17,23 +25,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  overflow-x: hidden;
 }
 
+/* Layout */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Top Container */
+.top-container {
+  width: 100%;
+  background: #fff;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  display: flex;
   justify-content: center;
 }
 
-/* Always center logo/navigation in viewport, all screen sizes */
-.centered-content-wrapper {
+/* Bottom Container */
+.bottom-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centering */
+.centered-content-wrapper,
+.centered-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,56 +65,12 @@ main {
   max-width: 400px;
   width: 100%;
   padding: 0 0.5rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-
-.centered-content {
-  max-width: 400px;
-  width: 100%;
-  align-items: center;
-  gap: 0.7rem;
-  pointer-events: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .logo {
   max-width: 180px;
   height: auto;
   opacity: 0.9;
-}
-
-.more-info {
-  font-size: 0.9rem;
-  color: #ccc;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background: none;
-  border: none;
-  padding: 0.75rem;
-  margin: 0 1rem;
-  line-height: 1;
-  filter: none;
-}
-
-.more-info:hover {
-  filter: none;
-  color: #1a1a1a;
-}
-
-/* Content Wrapper */
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding-top: 4rem;
-  margin-top: 40px;
 }
 
 /* Navigation */
@@ -101,16 +81,11 @@ main {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: bold;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 2rem;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
   max-width: 400px;
   width: 100%;
   gap: 0.2rem;
-  justify-content: space-between;
+  padding: 0 1rem;
+  margin: 1rem auto 3rem;
 }
 
 .category {
@@ -119,11 +94,11 @@ main {
   padding-bottom: 0.5rem;
   min-width: 120px;
   text-align: center;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   filter: blur(3px);
   color: #666;
   font-weight: 400;
   letter-spacing: 0.1em;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .category.active {
@@ -132,19 +107,11 @@ main {
   font-weight: 500;
 }
 
-/* When hovering a non-active category, unblur it and blur the active */
 .category:not(.active):hover {
   filter: blur(0);
   color: #1a1a1a;
 }
 
-.category:not(.active):hover ~ .category.active,
-.category.active:hover ~ .category:not(.active):hover {
-  filter: blur(3px);
-  color: #666;
-}
-
-/* For the case where the first is active and you hover the second, or vice versa */
 .categories:hover .category.active:not(:hover) {
   filter: blur(3px);
   color: #666;
@@ -155,32 +122,38 @@ main {
   color: #1a1a1a;
 }
 
-/* Remove blur from active if not hovering any non-active */
 .categories:not(:hover) .category.active {
   filter: blur(0);
   color: #1a1a1a;
 }
 
-/* Sections Container */
+/* Content Wrapper */
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Sections */
 .sections-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  padding: 0 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Content Sections */
 .section {
   display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transform: translateY(-20px);
-  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), max-height 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.4s, max-height 0.4s, transform 0.4s;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .section.active {
@@ -190,7 +163,7 @@ main {
   transform: translateY(0);
 }
 
-/* Items List */
+/* Items */
 .items-list {
   display: grid;
   gap: 1.5rem;
@@ -211,29 +184,15 @@ main {
   font-weight: 400;
   font-size: 0.6rem;
   letter-spacing: 0.05em;
-  transition: all 0.3s ease;
-}
-
-.item-title, .item-date, .item-venue, .item-artists, .item-artist {
-  transition: all 0.3s ease;
-  font-size: 0.6rem;
 }
 
 .item:hover .item-content {
   filter: blur(1px);
 }
 
-/* Remove hover effects when detail is active */
-.item .detail-view.active ~ .item-content,
-.item .detail-view.active ~ .item-content:hover {
-  filter: none;
-  letter-spacing: normal;
-}
-
 .item-date {
   min-width: 80px;
   color: #666;
-  font-weight: 400;
 }
 
 /* Detail View */
@@ -243,7 +202,7 @@ main {
   padding: 2rem;
   border: 1px solid #eee;
   font-size: 0.55rem;
-  background-color: #fff;
+  background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -284,38 +243,21 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.detail-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 .detail-info p {
   font-size: 0.6rem;
   line-height: 1.6;
-  font-weight: 400;
-}
-
-.detail-description {
-  margin: 1rem 0;
-  font-size: 0.6rem;
-  line-height: 1.6;
-  color: #444;
-  font-weight: 400;
-  font-style: italic;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 4rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
   border-top: 1px solid #eee;
   font-size: 0.6rem;
   color: #666;
 }
 
-/* Modal Styles */
+/* Modals */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -324,7 +266,7 @@ footer {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.5);
   justify-content: center;
   align-items: center;
 }
@@ -350,127 +292,13 @@ footer {
   font-size: 1.5rem;
   cursor: pointer;
   opacity: 0.7;
-  transition: opacity 0.3s ease;
 }
 
 .close-btn:hover {
   opacity: 1;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .sections-container {
-    padding: 0 1rem;
-  }
-
-  .section {
-    width: 100%;
-  }
-
-  .categories {
-    padding: 0 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .categories {
-    gap: 1.5rem;
-    font-size: 0.8rem;
-    padding: 0;
-  }
-  
-  .sections-container {
-    padding: 0;
-  }
-  
-  .detail-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .item-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .item-title,
-  .item-date,
-  .item-venue,
-  .item-artists,
-  .item-artist {
-    min-width: auto;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 0.2rem;
-    font-size: 0.75rem;
-  }
-  .centered-content-wrapper {
-    /* No min-height/height */
-  }
-  .centered-content {
-    /* No override, keep centering */
-  }
-  .categories {
-    /* No override, keep centering */
-  }
-  .content-wrapper {
-    margin-top: 24px;
-    max-width: 400px;
-    width: 90vw;
-    padding: 0;
-    gap: 0.5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .section {
-    max-width: 100vw;
-    padding: 0;
-  }
-  .items-list {
-    gap: 0.5rem;
-  }
-  .item {
-    padding: 0.5rem 0.2rem;
-    font-size: 0.85rem;
-  }
-  .item-content {
-    gap: 0.2rem;
-    font-size: 0.85rem;
-  }
-  .detail-content {
-    gap: 0.5rem;
-    padding: 0;
-  }
-  .detail-image,
-  .bandcamp-embed,
-  .video-embeds iframe {
-    width: 100% !important;
-    max-width: 100vw !important;
-    height: auto;
-  }
-  .detail-view {
-    padding: 0.5rem 0.1rem;
-    font-size: 0.75rem;
-  }
-  .modal-content {
-    padding: 0.5rem 0.2rem;
-    font-size: 0.8rem;
-    max-width: 99vw;
-  }
-  .video-embeds {
-    gap: 0.2rem;
-  }
-  .detail-header {
-    gap: 0.2rem;
-    padding-bottom: 0.2rem;
-  }
-}
-
-/* Minimal YouTube video embeds for details panel */
+/* Video embeds */
 .video-embeds {
   display: flex;
   gap: 1rem;
@@ -485,117 +313,53 @@ footer {
   background: #000;
   border: none;
 }
-@media (max-width: 700px) {
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.75rem;
+  }
+
+  .top-container {
+    padding-top: 1rem;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    gap: 1rem;
+  }
+
+  .content-wrapper,
+  .sections-container {
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+
+  .detail-view {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+
   .video-embeds {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
-
-/* Blur and darken everything except modal when modal is open */
-.site-blur.blur-active {
-  filter: blur(6px) grayscale(0.2) brightness(0.7);
-  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-}
-
-.modal-overlay[style*="display: flex"] {
-  background: rgba(0,0,0,0.5);
-} 
-
-/* --- Two container layout additions --- */
-/* --- Adjusted top-container to be visually lower, not fixed --- */
-.top-container {
-  position: static;
-  width: 100%; /* use 100% instead of 100vw to avoid overflow */
-  z-index: 100;
-  background: #fff;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  margin-top: 15vh;
-}
-
-.bottom-container {
-  position: relative;
-  width: 100%; /* ensure full width */
-  margin-top: 2rem;
-  min-height: 0;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center the content horizontally */
-}
-
-.content-wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  /* padding-top and margin-top already set to 0 above */
-}
-
-.sections-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-  .top-container {
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
-    margin-top: 5vh;
-  }
-  .bottom-container {
-    margin-top: 1rem;
-  }
-}
-
-/* --- Fit main area to viewport height and remove top-container border --- */
-html, body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  min-height: 0; /* remove min-height: 100vh */
-}
-
-main {
-  flex: 1 1 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 6vh; /* reduced from 10vh */
-}
-
-.top-container {
-  position: static;
-  width: 100%;
-  z-index: 100;
-  background: #fff;
-  padding-top: 1rem; /* reduced from 2rem */
-  padding-bottom: 0.5rem; /* reduced from 1rem */
-  display: flex;
-  justify-content: center;
-}
-
-.bottom-container {
-  position: relative;
-  width: 100%;
-  /* margin-top removed */
-  min-height: 0;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Remove top padding from .content-wrapper since .bottom-container handles spacing */
-.content-wrapper {
-  padding-top: 0;
-  margin-top: 0;
-} 

@@ -569,7 +569,7 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 10vh; /* push both containers down */
+  padding-top: 6vh; /* reduced from 10vh */
 }
 
 .top-container {
@@ -577,11 +577,10 @@ main {
   width: 100%;
   z-index: 100;
   background: #fff;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 1rem; /* reduced from 2rem */
+  padding-bottom: 0.5rem; /* reduced from 1rem */
   display: flex;
   justify-content: center;
-  /* margin-top removed */
 }
 
 .bottom-container {

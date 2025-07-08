@@ -20,9 +20,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 main {
@@ -30,6 +30,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
+  min-height: 100dvh;
 }
 
 /* Always center logo/navigation in viewport, all screen sizes */
@@ -418,7 +420,6 @@ footer {
     /* No override, keep centering */
   }
   .content-wrapper {
-    margin-top: 24px;
     max-width: 400px;
     width: 90vw;
     padding: 0;

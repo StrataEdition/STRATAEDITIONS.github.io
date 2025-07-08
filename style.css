@@ -502,3 +502,56 @@ footer {
 .modal-overlay[style*="display: flex"] {
   background: rgba(0,0,0,0.5);
 } 
+
+/* --- Two container layout additions --- */
+.top-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-container {
+  position: relative;
+  margin-top: 140px; /* height of top-container, adjust as needed */
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .top-container {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .bottom-container {
+    margin-top: 110px;
+  }
+}
+
+/* Ensure main takes full height for flex layout */
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove top padding from .content-wrapper since .bottom-container handles spacing */
+.content-wrapper {
+  padding-top: 0;
+  margin-top: 0;
+} 

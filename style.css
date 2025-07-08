@@ -504,10 +504,9 @@ footer {
 } 
 
 /* --- Two container layout additions --- */
-/* --- Adjusted top-container to be above center --- */
+/* --- Adjusted top-container to be visually lower, not fixed --- */
 .top-container {
-  position: fixed;
-  left: 0;
+  position: static;
   width: 100vw;
   z-index: 100;
   background: #fff;
@@ -516,15 +515,12 @@ footer {
   padding-bottom: 1rem;
   display: flex;
   justify-content: center;
-  /* Center vertically, but slightly above center */
-  top: 40%;
-  transform: translateY(-60%);
+  margin-top: 10vh; /* bring it down visually */
 }
 
 .bottom-container {
   position: relative;
-  /* The margin-top should match the new vertical position and height of .top-container */
-  margin-top: calc(40vh + 80px); /* 40vh for top, 80px for container height, adjust as needed */
+  margin-top: 2rem; /* just a small gap below top-container */
   min-height: 0;
   flex: 1 1 auto;
   display: flex;
@@ -535,11 +531,10 @@ footer {
   .top-container {
     padding-top: 1rem;
     padding-bottom: 0.5rem;
-    top: 35%;
-    transform: translateY(-65%);
+    margin-top: 5vh;
   }
   .bottom-container {
-    margin-top: calc(35vh + 60px);
+    margin-top: 1rem;
   }
 }
 

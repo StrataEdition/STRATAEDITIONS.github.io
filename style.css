@@ -592,10 +592,11 @@ main {
 
 .scrolling-symbols-container {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto 0.5rem auto;
+  max-width: 800px;
+  margin: 1.2rem auto 0.2rem auto;
+  padding: 0 2rem;
   overflow: hidden;
-  height: 1.2em;
+  height: 1.6em;
   position: relative;
   display: flex;
   align-items: center;
@@ -605,7 +606,7 @@ main {
   display: inline-block;
   white-space: nowrap;
   color: #ccc;
-  font-size: 0.7em;
+  font-size: 1.1em;
   letter-spacing: 0.15em;
   animation: scroll-symbols 18s linear infinite;
   font-family: 'Space Grotesk', Arial, sans-serif;

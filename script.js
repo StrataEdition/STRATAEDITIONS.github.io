@@ -101,15 +101,20 @@ document.addEventListener('DOMContentLoaded', function () {
   if (moreInfoBtn) {
     const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
     let symbolInterval;
+    let lastSymbol = '';
     function changeSymbol() {
-      const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+      let randomSymbol;
+      do {
+        randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+      } while (randomSymbol === lastSymbol);
+      lastSymbol = randomSymbol;
       moreInfoBtn.textContent = randomSymbol;
     }
     function startSymbolChange() {
       if (!symbolInterval) {
         changeSymbol();
         moreInfoBtn.classList.add('logo-blur');
-        symbolInterval = setInterval(changeSymbol, 250);
+        symbolInterval = setInterval(changeSymbol, 125);
       }
     }
     function stopSymbolChange() {

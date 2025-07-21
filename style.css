@@ -608,7 +608,7 @@ main {
   color: #bcbcbc;
   font-size: 1.1em;
   letter-spacing: 0.18em;
-  animation: scroll-symbols 18s linear infinite;
+  animation: scroll-symbols 38s linear infinite;
   font-family: 'Space Grotesk', 'Consolas', 'Courier New', monospace;
   user-select: none;
   pointer-events: none;

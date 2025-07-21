@@ -64,14 +64,14 @@ main {
 }
 
 .logo-blur {
-  filter: blur(2.5px) brightness(1.1);
+  filter: blur(4.5px) brightness(1.1);
   opacity: 0.7;
   transition: filter 0.2s, opacity 0.2s;
   display: inline-block;
 }
 
 .more-info {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   color: #ccc;
   text-decoration: none;
   cursor: pointer;

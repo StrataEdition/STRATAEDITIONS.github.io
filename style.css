@@ -1,130 +1,597 @@
-// Category switching
-document.addEventListener('DOMContentLoaded', function () {
-  // Hide all sections initially
-  var sections = document.querySelectorAll('.section');
-  sections.forEach(function (section) {
-    section.classList.remove('active');
-  });
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  // Navigation click handler
-  var categories = document.querySelectorAll('.category');
-  categories.forEach(function (cat) {
-    cat.addEventListener('click', function () {
-      // Remove active from all
-      categories.forEach(function (c) { c.classList.remove('active'); });
-      sections.forEach(function (section) { section.classList.remove('active'); });
-      // Add active to clicked
-      cat.classList.add('active');
-      var target = cat.getAttribute('data-target');
-      var section = document.getElementById(target);
-      if (section) {
-        section.classList.add('active');
-      }
-    });
-  });
-});
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
-// Item detail toggling
-document.querySelectorAll('.item').forEach(item => {
-  item.addEventListener('click', function() {
-    const detailId = 'detail-' + this.getAttribute('data-id');
-    const detailView = document.getElementById(detailId);
-    
-    // Close all other detail views
-    document.querySelectorAll('.detail-view').forEach(view => {
-      if (view.id !== detailId) {
-        view.classList.remove('active');
-      }
-    });
-    
-    // Toggle current detail view
-    detailView.classList.toggle('active');
-  });
-});
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  color: #1a1a1a;
+  font-size: 0.7rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-// Modal functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById("modal");
-  const openBtn = document.getElementById("moreInfoBtn");
-  const closeBtn = document.getElementById("closeModal");
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  openBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    modal.style.display = "flex";
-  });
+/* Always center logo/navigation in viewport, all screen sizes */
+.centered-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
 
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+.centered-content {
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+  gap: 0.7rem;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-});
+.logo {
+  max-width: 180px;
+  height: auto;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
 
-// Scrolling symbols effect
-(function() {
-  // LCD-like symbols
-  const lcdSymbols = ['✶','✷','✸','✹','✺','✻','✼','✽','✾','❂','•','◦','⁂','⁑','⁕','*','+','~','^','°','·',' '];
-  const minLen = 120; // Make the string long enough to fill the track and more
-  function getRandomSymbols(len) {
-    let s = '';
-    for (let i = 0; i < len; i++) {
-      s += lcdSymbols[Math.floor(Math.random() * lcdSymbols.length)];
-    }
-    return s;
+.logo-blur {
+  filter: blur(3px) brightness(1.1);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
+  display: inline-block;
+}
+
+.more-info {
+  font-size: 2.4rem;
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: none;
+  border: none;
+  padding: 0.75rem;
+  margin: 0 1rem;
+  line-height: 1;
+}
+
+.more-info:hover {
+  color: #1a1a1a;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 4rem;
+  margin-top: 40px;
+}
+
+/* Navigation */
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  max-width: 400px;
+  width: 100%;
+  gap: 0.2rem;
+  justify-content: space-between;
+}
+
+.category {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 0.5rem;
+  min-width: 120px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(3px);
+  color: #666;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.category.active {
+  filter: blur(0);
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* When hovering a non-active category, unblur it and blur the active */
+.category:not(.active):hover {
+  filter: blur(0);
+  color: #1a1a1a;
+}
+
+.category:not(.active):hover ~ .category.active,
+.category.active:hover ~ .category:not(.active):hover {
+  filter: blur(3px);
+  color: #666;
+}
+
+/* For the case where the first is active and you hover the second, or vice versa */
+.categories:hover .category.active:not(:hover) {
+  filter: blur(3px);
+  color: #666;
+}
+
+.categories:hover .category:not(.active):hover {
+  filter: blur(0);
+  color: #1a1a1a;
+}
+
+/* Remove blur from active if not hovering any non-active */
+.categories:not(:hover) .category.active {
+  filter: blur(0);
+  color: #1a1a1a;
+}
+
+/* Sections Container */
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* Content Sections */
+.section {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), max-height 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section.active {
+  display: block;
+  opacity: 1;
+  max-height: 2000px;
+  transform: translateY(0);
+}
+
+/* Items List */
+.items-list {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.item-title, .item-date, .item-venue, .item-artists, .item-artist {
+  transition: all 0.3s ease;
+  font-size: 0.6rem;
+}
+
+.item:hover .item-content {
+  filter: blur(1px);
+}
+
+/* Remove hover effects when detail is active */
+.item .detail-view.active ~ .item-content,
+.item .detail-view.active ~ .item-content:hover {
+  filter: none;
+  letter-spacing: normal;
+}
+
+.item-date {
+  min-width: 80px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Detail View */
+.detail-view {
+  display: none;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #eee;
+  font-size: 0.55rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.detail-view.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-header h2 {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.detail-image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-info p {
+  font-size: 0.6rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.detail-description {
+  margin: 1rem 0;
+  font-size: 0.6rem;
+  line-height: 1.6;
+  color: #444;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+  font-size: 0.55rem;
+  max-width: 400px;
+  width: 90%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sections-container {
+    padding: 0 1rem;
   }
-  document.addEventListener('DOMContentLoaded', function() {
-    const track = document.querySelector('.scrolling-symbols-track');
-    if (track) {
-      // Fill with a long string and repeat only the first character for seamlessness
-      let str = getRandomSymbols(minLen);
-      // Repeat only the first character at the end for seamless scroll
-      track.textContent = str + str[0];
-    }
-  });
-})();
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Restore logo to original
-  const logoImg = document.querySelector('.logo');
-  if (logoImg) {
-    logoImg.src = 'images/strataLogo.png';
-    logoImg.alt = 'STRATA logo';
-    logoImg.classList.remove('logo-blur');
+  .section {
+    width: 100%;
   }
 
-  // More info button effect
-  const moreInfoBtn = document.getElementById('moreInfoBtn');
-  if (moreInfoBtn) {
-    const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
-    let symbolInterval;
-    let lastSymbol = '';
-    function changeSymbol() {
-      let randomSymbol;
-      do {
-        randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-      } while (randomSymbol === lastSymbol);
-      lastSymbol = randomSymbol;
-      moreInfoBtn.textContent = randomSymbol;
-    }
-    function startSymbolChange() {
-      if (!symbolInterval) {
-        changeSymbol();
-        moreInfoBtn.classList.add('logo-blur');
-        symbolInterval = setInterval(changeSymbol, 125);
-      }
-    }
-    function stopSymbolChange() {
-      clearInterval(symbolInterval);
-      symbolInterval = null;
-      moreInfoBtn.classList.remove('logo-blur');
-    }
-    // Start changing on load
-    startSymbolChange();
-    moreInfoBtn.addEventListener('mouseenter', stopSymbolChange);
-    moreInfoBtn.addEventListener('mouseleave', startSymbolChange);
+  .categories {
+    padding: 0 1rem;
   }
-});
+}
+
+@media (max-width: 768px) {
+  .categories {
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    padding: 0;
+  }
+  
+  .sections-container {
+    padding: 0;
+  }
+  
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .item-title,
+  .item-date,
+  .item-venue,
+  .item-artists,
+  .item-artist {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0.2rem;
+    font-size: 0.75rem;
+  }
+  .centered-content-wrapper {
+    /* No min-height/height */
+  }
+  .centered-content {
+    /* No override, keep centering */
+  }
+  .categories {
+    /* No override, keep centering */
+  }
+  .content-wrapper {
+    margin-top: 24px;
+    max-width: 400px;
+    width: 90vw;
+    padding: 0;
+    gap: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    max-width: 100vw;
+    padding: 0;
+  }
+  .items-list {
+    gap: 0.5rem;
+  }
+  .item {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.85rem;
+  }
+  .item-content {
+    gap: 0.2rem;
+    font-size: 0.85rem;
+  }
+  .detail-content {
+    gap: 0.5rem;
+    padding: 0;
+  }
+  .detail-image,
+  .bandcamp-embed,
+  .video-embeds iframe {
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: auto;
+  }
+  .detail-view {
+    padding: 0.5rem 0.1rem;
+    font-size: 0.75rem;
+  }
+  .modal-content {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.8rem;
+    max-width: 99vw;
+  }
+  .video-embeds {
+    gap: 0.2rem;
+  }
+  .detail-header {
+    gap: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+}
+
+/* Minimal YouTube video embeds for details panel */
+.video-embeds {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.video-embeds iframe {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  background: #000;
+  border: none;
+}
+@media (max-width: 700px) {
+  .video-embeds {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Blur and darken everything except modal when modal is open */
+.site-blur.blur-active {
+  filter: blur(6px) grayscale(0.2) brightness(0.7);
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.modal-overlay[style*="display: flex"] {
+  background: rgba(0,0,0,0.5);
+} 
+
+/* --- Two container layout additions --- */
+/* --- Adjusted top-container to be visually lower, not fixed --- */
+.top-container {
+  position: static;
+  width: 100%; /* use 100% instead of 100vw to avoid overflow */
+  z-index: 100;
+  background: #fff;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.bottom-container {
+  position: relative;
+  width: 100%; /* ensure full width */
+  margin-top: 2rem;
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the content horizontally */
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding-top and margin-top already set to 0 above */
+}
+
+.sections-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .top-container {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    margin-top: 5vh;
+  }
+  .bottom-container {
+    margin-top: 1rem;
+  }
+}
+
+/* --- Fit main area to viewport height and remove top-container border --- */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 0; /* remove min-height: 100vh */
+}
+
+main {
+  flex: 1 1 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6vh; /* reduced from 10vh */
+}
+
+.top-container {
+  position: static;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  padding-top: 1rem; /* reduced from 2rem */
+  padding-bottom: 0.5rem; /* reduced from 1rem */
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-container {
+  position: relative;
+  width: 100%;
+  /* margin-top removed */
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Remove top padding from .content-wrapper since .bottom-container handles spacing */
+.content-wrapper {
+  padding-top: 0;
+  margin-top: 0;
+} 

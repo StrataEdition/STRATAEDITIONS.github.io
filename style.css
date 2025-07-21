@@ -382,14 +382,20 @@ main {
     padding: 0.2rem;
     font-size: 0.75rem;
   }
+  .logo {
+    max-width: 120px;
+  }
+  .more-info {
+    font-size: 1.6rem;
+  }
+  .categories {
+    font-size: 0.8rem;
+  }
   .centered-content-wrapper {
     /* No min-height/height */
   }
   .centered-content {
     /* No override, keep centering */
-  }
-  .categories {
-    font-size: 1rem;
   }
   .content-wrapper {
     margin-top: 24px;
@@ -408,6 +414,7 @@ main {
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
   .item {
     padding: 0.5rem 1rem;
@@ -458,6 +465,10 @@ main {
   }
   .video-embeds {
     gap: 0.2rem;
+  }
+  #label .bandcamp-embed,
+  #shows .detail-info {
+    display: none;
   }
   .detail-header {
     gap: 0.2rem;

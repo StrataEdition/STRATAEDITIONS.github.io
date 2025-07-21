@@ -70,7 +70,7 @@ main {
 }
 
 .more-info {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   color: #ccc;
   text-decoration: none;
   cursor: pointer;
@@ -81,43 +81,18 @@ main {
   margin: 0 1rem;
   line-height: 1;
   filter: none;
+  display: inline-block;
+}
+.more-info.logo-blur {
+  filter: blur(4px) brightness(1.1);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
 }
 
-.more-info:hover {
-  filter: none;
-  color: #1a1a1a;
-}
-
-/* Content Wrapper */
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding-top: 4rem;
-  margin-top: 40px;
-}
-
-/* Navigation */
-.categories {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 2rem;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-  max-width: 400px;
-  width: 100%;
-  gap: 0.2rem;
-  justify-content: space-between;
+@keyframes blurFade {
+  0% { filter: blur(6px) opacity(0.1); }
+  50% { filter: blur(1.5px) opacity(1); }
+  100% { filter: blur(6px) opacity(0.1); }
 }
 
 .category {
@@ -127,16 +102,17 @@ main {
   min-width: 120px;
   text-align: center;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: blur(3px);
+  filter: blur(6px);
   color: #666;
   font-weight: 400;
   letter-spacing: 0.1em;
+  animation: blurFade 2.2s infinite cubic-bezier(0.4,0,0.2,1);
 }
-
 .category.active {
   filter: blur(0);
   color: #1a1a1a;
   font-weight: 500;
+  animation: none;
 }
 
 /* When hovering a non-active category, unblur it and blur the active */

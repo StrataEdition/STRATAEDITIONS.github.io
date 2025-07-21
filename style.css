@@ -305,16 +305,6 @@ main {
   font-style: italic;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 4rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eee;
-  font-size: 0.6rem;
-  color: #666;
-}
-
 /* Modal Styles */
 .modal-overlay {
   display: none;

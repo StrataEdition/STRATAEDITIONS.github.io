@@ -1,13 +1,27 @@
 // Category switching
 document.addEventListener('DOMContentLoaded', function () {
-  // Hide all sections initially
+  // Always show label section as active on load
   var sections = document.querySelectorAll('.section');
+  var categories = document.querySelectorAll('.category');
   sections.forEach(function (section) {
     section.classList.remove('active');
   });
+  categories.forEach(function (cat) {
+    cat.classList.remove('active');
+  });
+  var labelSection = document.getElementById('label');
+  var labelCategory = document.querySelector('.category[data-target="label"]');
+  if (labelSection) labelSection.classList.add('active');
+  if (labelCategory) labelCategory.classList.add('active');
+
+  // Hide all sections initially
+  // var sections = document.querySelectorAll('.section');
+  // sections.forEach(function (section) {
+  //   section.classList.remove('active');
+  // });
 
   // Navigation click handler
-  var categories = document.querySelectorAll('.category');
+  // var categories = document.querySelectorAll('.category');
   categories.forEach(function (cat) {
     cat.addEventListener('click', function () {
       // Remove active from all

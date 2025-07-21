@@ -63,3 +63,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Scrolling symbols effect
+(function() {
+  const symbols = '✶✷✸✹✺✻✼✽✾✿❀❁❂❃❄❅❆❇❈❉❊❋•◦⁂⁑⁕⁖⁗⁘⁙⁚⁛⁜⁝⁞*+~^°·';
+  const minLen = 60; // Minimum number of characters to fill the track
+  function getRandomSymbols(len) {
+    let s = '';
+    for (let i = 0; i < len; i++) {
+      s += symbols[Math.floor(Math.random() * symbols.length)];
+    }
+    return s;
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.scrolling-symbols-track');
+    if (track) {
+      // Fill with enough symbols to scroll smoothly
+      const str = getRandomSymbols(minLen);
+      // Repeat to ensure seamless scroll
+      track.textContent = str + '   ' + str;
+    }
+  });
+})();

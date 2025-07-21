@@ -589,3 +589,31 @@ main {
   padding-top: 0;
   margin-top: 0;
 } 
+
+.scrolling-symbols-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 0.5rem auto;
+  overflow: hidden;
+  height: 1.2em;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scrolling-symbols-track {
+  display: inline-block;
+  white-space: nowrap;
+  color: #ccc;
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  animation: scroll-symbols 18s linear infinite;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes scroll-symbols {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+} 

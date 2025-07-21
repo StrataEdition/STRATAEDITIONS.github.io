@@ -68,8 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 (function() {
   // LCD-like symbols
   const lcdSymbols = ['✶','✷','✸','✹','✺','✻','✼','✽','✾','❂','•','◦','⁂','⁑','⁕','*','+','~','^','°','·',' '];
-  const minLen = 60; // Minimum number of characters to fill the track
-  const repeatCount = 6; // Repeat the string to ensure it's always filled
+  const minLen = 120; // Make the string long enough to fill the track and more
   function getRandomSymbols(len) {
     let s = '';
     for (let i = 0; i < len; i++) {
@@ -80,13 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.scrolling-symbols-track');
     if (track) {
-      // Fill with enough symbols to scroll smoothly and always be filled
-      let str = '';
-      for (let i = 0; i < repeatCount; i++) {
-        str += getRandomSymbols(minLen);
-      }
-      // Repeat to ensure seamless scroll
-      track.textContent = str + str;
+      // Fill with a long string and repeat only the first character for seamlessness
+      let str = getRandomSymbols(minLen);
+      // Repeat only the first character at the end for seamless scroll
+      track.textContent = str + str[0];
     }
   });
 })();

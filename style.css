@@ -431,15 +431,17 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
+    text-align: left;
   }
   .item-title, .item-date, .item-venue, .item-artists, .item-artist {
     min-width: auto;
     font-size: 0.6rem;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: left;
+    word-break: break-word;
   }
   .detail-content {
     gap: 0.5rem;

@@ -114,3 +114,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const logoImg = document.querySelector('.logo');
+  if (logoImg) {
+    const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
+    let logoInterval;
+    function symbolToSVG(symbol) {
+      // SVG with centered symbol, white background, gray symbol, large font
+      return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><rect width='100%' height='100%' fill='white'/><text x='50%' y='50%' font-size='120' text-anchor='middle' dominant-baseline='central' fill='%23999' font-family='Space Grotesk,Arial,sans-serif'>${symbol}</text></svg>`;
+    }
+    function changeLogo() {
+      const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+      logoImg.src = symbolToSVG(randomSymbol);
+      logoImg.alt = randomSymbol;
+    }
+    function startLogoChange() {
+      if (!logoInterval) {
+        changeLogo();
+        logoImg.classList.add('logo-blur');
+        logoInterval = setInterval(changeLogo, 250);
+      }
+    }
+    function stopLogoChange() {
+      clearInterval(logoInterval);
+      logoInterval = null;
+      logoImg.classList.remove('logo-blur');
+    }
+    // Start changing on load
+    startLogoChange();
+    logoImg.addEventListener('mouseenter', stopLogoChange);
+    logoImg.addEventListener('mouseleave', startLogoChange);
+  }
+});

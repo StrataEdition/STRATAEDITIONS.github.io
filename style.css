@@ -389,7 +389,7 @@ main {
     /* No override, keep centering */
   }
   .categories {
-    /* No override, keep centering */
+    font-size: 1rem;
   }
   .content-wrapper {
     margin-top: 24px;
@@ -408,14 +408,12 @@ main {
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   .item {
-    padding: 0.5rem 0.2rem;
+    padding: 0.5rem 1rem;
     font-size: 0.85rem;
     width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
+    max-width: 380px;
   }
   .item-content {
     gap: 0.2rem;
@@ -446,6 +444,9 @@ main {
     margin: 0 auto;
     display: block;
   }
+  .detail-info {
+    text-align: center;
+  }
   .detail-view {
     padding: 0.5rem 0.1rem;
     font-size: 0.75rem;
@@ -461,6 +462,33 @@ main {
   .detail-header {
     gap: 0.2rem;
     padding-bottom: 0.2rem;
+  }
+
+  /* Label Detail View Mobile Layout */
+  #label .detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #label .detail-content > div:first-child,
+  #label .detail-info {
+    display: contents;
+  }
+  #label .detail-description {
+    order: 1;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  #label .detail-image {
+    order: 2;
+  }
+  #label .bandcamp-embed {
+    order: 3;
+  }
+  #label .video-embeds {
+    display: none;
   }
 }
 

@@ -112,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // More info button effect
   const moreInfoBtn = document.getElementById('moreInfoBtn');
+  const favicon = document.querySelector("link[rel='icon']");
+
   if (moreInfoBtn) {
     const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
     let symbolInterval;
@@ -123,6 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
       } while (randomSymbol === lastSymbol);
       lastSymbol = randomSymbol;
       moreInfoBtn.textContent = randomSymbol;
+
+      if (favicon) {
+        const newFavicon = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${randomSymbol}</text></svg>`;
+        favicon.href = newFavicon;
+      }
     }
     function startSymbolChange() {
       if (!symbolInterval) {

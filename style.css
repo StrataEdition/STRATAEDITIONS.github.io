@@ -374,6 +374,9 @@ main {
   .item-artists,
   .item-artist {
     min-width: auto;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    text-align: left;
   }
 }
 
@@ -473,6 +476,13 @@ main {
   .detail-header {
     gap: 0.2rem;
     padding-bottom: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .detail-description {
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   /* Label Detail View Mobile Layout */

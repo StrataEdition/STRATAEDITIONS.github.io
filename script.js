@@ -88,62 +88,38 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Restore logo to original
+  const logoImg = document.querySelector('.logo');
+  if (logoImg) {
+    logoImg.src = 'images/strataLogo.png';
+    logoImg.alt = 'STRATA logo';
+    logoImg.classList.remove('logo-blur');
+  }
+
+  // More info button effect
   const moreInfoBtn = document.getElementById('moreInfoBtn');
   if (moreInfoBtn) {
     const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
     let symbolInterval;
-
     function changeSymbol() {
       const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
       moreInfoBtn.textContent = randomSymbol;
     }
-
-    moreInfoBtn.addEventListener('mouseenter', () => {
-      // Start changing symbol on hover
+    function startSymbolChange() {
       if (!symbolInterval) {
-        changeSymbol(); // Change immediately on first hover
-        symbolInterval = setInterval(changeSymbol, 500);
+        changeSymbol();
+        moreInfoBtn.classList.add('logo-blur');
+        symbolInterval = setInterval(changeSymbol, 250);
       }
-    });
-
-    moreInfoBtn.addEventListener('mouseleave', () => {
-      // Stop changing and reset to default when not hovering
+    }
+    function stopSymbolChange() {
       clearInterval(symbolInterval);
       symbolInterval = null;
-      moreInfoBtn.textContent = '✣'; // Reset to default symbol
-    });
-  }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const logoImg = document.querySelector('.logo');
-  if (logoImg) {
-    const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
-    let logoInterval;
-    function symbolToSVG(symbol) {
-      // SVG with centered symbol, white background, gray symbol, large font
-      return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><rect width='100%' height='100%' fill='white'/><text x='50%' y='50%' font-size='120' text-anchor='middle' dominant-baseline='central' fill='%23999' font-family='Space Grotesk,Arial,sans-serif'>${symbol}</text></svg>`;
-    }
-    function changeLogo() {
-      const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-      logoImg.src = symbolToSVG(randomSymbol);
-      logoImg.alt = randomSymbol;
-    }
-    function startLogoChange() {
-      if (!logoInterval) {
-        changeLogo();
-        logoImg.classList.add('logo-blur');
-        logoInterval = setInterval(changeLogo, 250);
-      }
-    }
-    function stopLogoChange() {
-      clearInterval(logoInterval);
-      logoInterval = null;
-      logoImg.classList.remove('logo-blur');
+      moreInfoBtn.classList.remove('logo-blur');
     }
     // Start changing on load
-    startLogoChange();
-    logoImg.addEventListener('mouseenter', stopLogoChange);
-    logoImg.addEventListener('mouseleave', startLogoChange);
+    startSymbolChange();
+    moreInfoBtn.addEventListener('mouseenter', stopSymbolChange);
+    moreInfoBtn.addEventListener('mouseleave', startSymbolChange);
   }
 });

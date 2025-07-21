@@ -86,3 +86,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const moreInfoBtn = document.getElementById('moreInfoBtn');
+  if (moreInfoBtn) {
+    const symbols = ['✣', '✢', '✤', '✥', '✦', '✧', '★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰'];
+    let symbolInterval;
+
+    function changeSymbol() {
+      const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+      moreInfoBtn.textContent = randomSymbol;
+    }
+
+    moreInfoBtn.addEventListener('mouseenter', () => {
+      // Start changing symbol on hover
+      if (!symbolInterval) {
+        changeSymbol(); // Change immediately on first hover
+        symbolInterval = setInterval(changeSymbol, 500);
+      }
+    });
+
+    moreInfoBtn.addEventListener('mouseleave', () => {
+      // Stop changing and reset to default when not hovering
+      clearInterval(symbolInterval);
+      symbolInterval = null;
+      moreInfoBtn.textContent = '✣'; // Reset to default symbol
+    });
+  }
+});

@@ -605,16 +605,24 @@ main {
 .scrolling-symbols-track {
   display: inline-block;
   white-space: nowrap;
-  color: #ccc;
+  color: #bcbcbc;
   font-size: 1.1em;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   animation: scroll-symbols 18s linear infinite;
-  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-family: 'Space Grotesk', 'Consolas', 'Courier New', monospace;
   user-select: none;
   pointer-events: none;
+  text-shadow: 0 0 2px #fff, 0 0 1px #aaa;
 }
 
 @keyframes scroll-symbols {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
+} 
+
+.lcd-strata {
+  font-style: italic;
+  font-family: 'Space Grotesk', 'Consolas', 'Courier New', monospace;
+  letter-spacing: 0.08em;
+  color: #bbb;
 } 

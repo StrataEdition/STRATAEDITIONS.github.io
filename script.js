@@ -66,22 +66,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Scrolling symbols effect
 (function() {
-  const symbols = '✶✷✸✹✺✻✼✽✾✿❀❁❂❃❄❅❆❇❈❉❊❋•◦⁂⁑⁕⁖⁗⁘⁙⁚⁛⁜⁝⁞*+~^°·';
-  const minLen = 60; // Minimum number of characters to fill the track
-  function getRandomSymbols(len) {
+  // LCD-like symbols
+  const lcdSymbols = ['✶','✷','✸','✹','✺','✻','✼','✽','✾','❂','•','◦','⁂','⁑','⁕','*','+','~','^','°','·',' '];
+  const lcdWord = '<span class="lcd-strata">STRATA</span>';
+  const repeatCount = 8; // How many times to repeat the pattern
+  function buildLCDString() {
     let s = '';
-    for (let i = 0; i < len; i++) {
-      s += symbols[Math.floor(Math.random() * symbols.length)];
+    for (let i = 0; i < repeatCount; i++) {
+      s += lcdWord;
+      s += lcdSymbols[Math.floor(Math.random() * (lcdSymbols.length))];
     }
     return s;
   }
   document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.scrolling-symbols-track');
     if (track) {
-      // Fill with enough symbols to scroll smoothly
-      const str = getRandomSymbols(minLen);
+      // Fill with enough pattern to scroll smoothly and repeat
+      const str = buildLCDString();
       // Repeat to ensure seamless scroll
-      track.textContent = str + '   ' + str;
+      track.innerHTML = str + str;
     }
   });
 })();

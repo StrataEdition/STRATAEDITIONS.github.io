@@ -438,7 +438,7 @@ main {
   }
   .item-title, .item-date, .item-venue, .item-artists, .item-artist {
     min-width: auto;
-    font-size: 0.85rem;
+    font-size: 0.6rem;
     white-space: nowrap;
   }
   .detail-content {

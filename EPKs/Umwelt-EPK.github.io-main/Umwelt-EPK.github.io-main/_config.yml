@@ -1,0 +1,15 @@
+# Example Site settings
+
+google_analytics: 9660760729
+
+#header_pages:
+#- index.md
+#- contact.md
+
+footer: 'Find STRATA on <a href="https://www.instagram.com/strata.edition/"> Instagram </a>'
+
+style: light # dark (default) or light
+#listen_for_clients_preferred_style: true # true or false (default)
+
+plugins:
+  - jekyll-seo-tag

@@ -886,26 +886,34 @@ body.entered .artists-drawer {
     display: none;
   }
 
+  /* --- Make logo smaller on mobile --- */
+  body.entered .top-container .logo {
+    max-width: 150px; /* Reduced from 180px */
+  }
+
   /* --- Make category titles even smaller --- */
   .category {
-    font-size: 0.7rem; /* Reduced from 0.85rem */
-    min-width: 80px; /* Reduced from 90px */
-    letter-spacing: 0.03em; /* Tighter letter spacing */
-    padding-bottom: 0.3rem; /* Smaller padding */
+    font-size: 0.65rem; /* Further reduced from 0.7rem */
+    min-width: 70px; /* Further reduced from 80px */
+    letter-spacing: 0.02em; /* Even tighter letter spacing */
+    padding-bottom: 0.3rem;
   }
 
-  /* --- Make listing titles fit on one line --- */
+  /* --- Make listing titles even smaller --- */
   .item-title {
-    font-size: 0.68rem; /* Reduced from 0.75rem */
-    letter-spacing: 0.02em; /* Tighter letter spacing */
-    white-space: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
-    max-width: 100%; /* Ensure it doesn't overflow its container */
+    font-size: 0.62rem; /* Further reduced from 0.68rem */
+    letter-spacing: 0.01em; /* Even tighter letter spacing */
+    font-weight: 500; /* Slightly reduced weight for better readability at small size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
-
-  /* Ensure item content takes full width */
-  .item-content {
-    width: 100%;
+  
+  /* --- Adjust item date/venue size too for balance --- */
+  .item-date,
+  .item-venue {
+    font-size: 0.62rem; /* Match the title size */
+    min-width: 70px; /* Reduced width */
   }
 }

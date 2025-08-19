@@ -886,15 +886,26 @@ body.entered .artists-drawer {
     display: none;
   }
 
-  /* --- Make category titles smaller --- */
+  /* --- Make category titles even smaller --- */
   .category {
-    font-size: 0.85rem; /* Smaller category titles on mobile */
-    min-width: 90px; /* Allow them to be closer together */
+    font-size: 0.7rem; /* Reduced from 0.85rem */
+    min-width: 80px; /* Reduced from 90px */
+    letter-spacing: 0.03em; /* Tighter letter spacing */
+    padding-bottom: 0.3rem; /* Smaller padding */
   }
 
-  /* --- Make listing titles smaller to fit on one line --- */
+  /* --- Make listing titles fit on one line --- */
   .item-title {
-    font-size: 0.75rem; /* Smaller listing title on mobile */
-    letter-spacing: 0.03em; /* Reduce letter spacing slightly */
+    font-size: 0.68rem; /* Reduced from 0.75rem */
+    letter-spacing: 0.02em; /* Tighter letter spacing */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    max-width: 100%; /* Ensure it doesn't overflow its container */
+  }
+
+  /* Ensure item content takes full width */
+  .item-content {
+    width: 100%;
   }
 }

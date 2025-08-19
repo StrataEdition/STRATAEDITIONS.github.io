@@ -627,7 +627,7 @@ body.entered .artists-drawer {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  background: #f7f7f7; /* Match website background */
+  background: #fff; /* Changed from #f7f7f7 to match website background */
   border-top: 1px solid #e5e5e5;
   height: 45px; /* Closed height */
   transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -886,24 +886,39 @@ body.entered .artists-drawer {
     display: none;
   }
 
+  /* --- Remove blur effects on mobile --- */
+  .category:not(.active):hover {
+    filter: none; /* Remove blur effect on category titles */
+  }
+  
+  .artists-title:hover {
+    filter: none; /* Remove blur effect on bottom panel */
+    color: #333; /* Keep the color change on hover */
+  }
+
+  /* --- Hide title in label detail view --- */
+  #label .detail-view .detail-header {
+    display: none !important; /* Hide the header with title in detail view */
+  }
+  
   /* --- Make logo smaller on mobile --- */
   body.entered .top-container .logo {
-    max-width: 150px; /* Reduced from 180px */
+    max-width: 120px; /* Further reduced from 150px */
   }
 
   /* --- Make category titles even smaller --- */
   .category {
-    font-size: 0.65rem; /* Further reduced from 0.7rem */
-    min-width: 70px; /* Further reduced from 80px */
-    letter-spacing: 0.02em; /* Even tighter letter spacing */
+    font-size: 0.6em; /* Further reduced */
+    min-width: 65px; /* Further reduced */
+    letter-spacing: 0.01em; /* Even tighter letter spacing */
     padding-bottom: 0.3rem;
   }
 
   /* --- Make listing titles even smaller --- */
   .item-title {
-    font-size: 0.62rem; /* Further reduced from 0.68rem */
-    letter-spacing: 0.01em; /* Even tighter letter spacing */
-    font-weight: 500; /* Slightly reduced weight for better readability at small size */
+    font-size: 0.5rem; /* Further reduced */
+    letter-spacing: 0em; /* No extra letter spacing */
+    font-weight: 600; /* Increase weight slightly for better visibility at small size */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -913,7 +928,44 @@ body.entered .artists-drawer {
   /* --- Adjust item date/venue size too for balance --- */
   .item-date,
   .item-venue {
-    font-size: 0.62rem; /* Match the title size */
-    min-width: 70px; /* Reduced width */
+    font-size: 0.55rem; /* Match the title size */
+    min-width: 60px; /* Further reduced width */
+  }
+
+  /* --- Consistent listing styles for all text elements --- */
+  .item-content,
+  .item-title,
+  .item-date,
+  .item-venue,
+  .item-artists,
+  .item-artist,
+  .item-info * {
+    font-size: 0.55rem !important; /* Force same size for all text in listings */
+    letter-spacing: 0 !important;  /* Remove letter spacing */
+    white-space: nowrap !important; /* Prevent wrapping */
+    overflow: hidden !important;   /* Hide overflow */
+    text-overflow: ellipsis !important; /* Add ellipsis */
+    max-width: 100% !important;    /* Limit width */
+  }
+  
+  /* Give more room to the main title content */
+  .item-content {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    width: 100%;
+    gap: 0.8rem; /* Reduce gap between elements */
+  }
+  
+  /* Reduce the width of date/venue to give more space to title */
+  .item-date,
+  .item-venue {
+    min-width: 50px !important; /* Further reduced width */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  /* Make the title section grow to fill available space */
+  .item-info {
+    flex-grow: 1;
+    overflow: hidden;
   }
 }

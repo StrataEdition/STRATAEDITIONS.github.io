@@ -3,8 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* This global transition MUST be removed or commented out */
-  /* transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -12,8 +10,8 @@
 
 /* Use Inter for everything */
 body {
-  /* Revert to previous background and color */
-  background: #f3f3f3; /* Off-white for better contrast */
+  /* Change background to white */
+  background: #fff;
   color: #1a1a1a;
   font-family: "Inter", "Questrial", sans-serif;
   font-weight: 400;
@@ -25,8 +23,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Remove radial gradient */
-  background: #f7f7f7;
 }
 
 /* Always center logo/navigation in viewport, all screen sizes */
@@ -888,5 +884,17 @@ body.entered .artists-drawer {
   /* Hide everything except the image */
   #shows .detail-info {
     display: none;
+  }
+
+  /* --- Make category titles smaller --- */
+  .category {
+    font-size: 0.85rem; /* Smaller category titles on mobile */
+    min-width: 90px; /* Allow them to be closer together */
+  }
+
+  /* --- Make listing titles smaller to fit on one line --- */
+  .item-title {
+    font-size: 0.75rem; /* Smaller listing title on mobile */
+    letter-spacing: 0.03em; /* Reduce letter spacing slightly */
   }
 }

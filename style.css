@@ -1193,7 +1193,7 @@ body.entered .artists-drawer {
   
   /* Adjust panel height for smaller text */
   .artists-sidebar {
-    height: 50px !important; /* Slightly smaller height to match text */
+    height: 40px !important; /* Slightly smaller height to match text */
   }
   
   .artists-title {
@@ -1232,4 +1232,80 @@ body.entered .artists-drawer {
   .item:first-child {
     padding-top: 0 !important;
   }
+  
+  /* --- Fix bottom panel background issue --- */
+  
+  /* Add background to the drawer itself */
+  .artists-drawer {
+    background-color: #fff !important; /* Match the sidebar background */
+    height: 40px !important; /* Consistent height with the sidebar */
+  }
+  
+  /* Ensure sidebar fills entire drawer */
+  .artists-sidebar {
+    height: 100% !important; /* Fill entire drawer height */
+    min-height: 40px !important; /* Minimum height equal to drawer */
+    position: absolute !important; /* Position it absolutely */
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+  }
+  
+  /* When open, adjust heights accordingly */
+  .artists-drawer.open {
+    height: 130px !important; /* Total height when open */
+    background-color: #fff !important; /* Ensure background extends */
+  }
+  
+  .artists-drawer.open .artists-sidebar {
+    min-height: 130px !important; /* Match drawer open height */
+  }
+  
+  /* Fix inner content positioning */
+  .artists-inner {
+    padding-top: 40px !important; /* Start content below the title */
+    background-color: #fff !important; /* Ensure content area has background */
+  }
+  
+  /* Make sure title stays at the top */
+  .artists-title {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: #fff !important;
+    z-index: 1 !important;
+  }
+}
+
+/* --- Make detail view text smaller on mobile --- */
+  
+/* Target all descriptive text in detail panels */
+.detail-info p,
+.detail-info li,
+.detail-info div,
+.detail-info span,
+.detail-description,
+.detail-content * {
+  font-size: 0.52rem !important; /* Reduce from 0.7rem to 0.5rem */
+  line-height: 1.5 !important; /* Slightly reduce line height for better fit */
+}
+
+/* Target specifically label descriptions */
+#label .detail-info p,
+#label .detail-info div,
+#label .detail-description {
+  font-size: 0.52rem !important;
+  margin-bottom: 1rem !important; /* Reduce paragraph margin for tighter layout */
+}
+
+/* Make sure bandcamp embeds don't overflow */
+.bandcamp-embed,
+iframe {
+  max-width: 100% !important;
+  margin-bottom: 1rem !important;
 }

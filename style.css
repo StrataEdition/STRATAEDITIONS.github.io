@@ -248,7 +248,7 @@ body {
 
 .item-content {
   display: grid !important;
-  grid-template-columns: 1fr 1fr 3fr  !important; /* Title gets more space */
+  grid-template-columns: 1.5fr 1fr 3fr !important; /* Title gets more space */
   gap: 1.5rem !important;
   width: 100% !important;
   align-items: center !important;
@@ -709,7 +709,7 @@ body.entered .artists-drawer {
 .artists-inner .artist {
   color: #888; /* Lighter grey for contact info */
   font-size: 0.75rem;
-}
+}       
 
 /* New styles for the links container */
 .panel-links {
@@ -1013,7 +1013,7 @@ body.entered .artists-drawer {
   .item-artists,
   .item-artist,
   .item-info * {
-    font-size: 0.55rem !important; /* Force same size for all text in listings */
+    font-size: 0.5rem !important; /* Force same size for all text in listings */
     letter-spacing: 0 !important;  /* Remove letter spacing */
     white-space: nowrap !important; /* Prevent wrapping */
     overflow: hidden !important;   /* Hide overflow */
@@ -1053,23 +1053,18 @@ body.entered .artists-drawer {
   #shows .item-date {
     min-width: auto !important;
     width: auto;
-    font-size: 0.55rem !important;
+    font-size: 0.5rem !important;
     padding-right: 0.5rem;
   }
   
   #shows .item-title {
-    font-size: 0.55rem !important;
+    font-size: 0.5rem !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   
-  /* Hide other elements in Shows section on mobile */
-  #shows .item-venue,
-  #shows .item-artists,
-  #shows .item-info > *:not(.item-title) {
-    display: none !important;
-  }
+
 
   /* Adjust spacing in Shows section */
   #shows .item {
@@ -1165,4 +1160,43 @@ body.entered .artists-drawer {
 .detail-content {
   margin-top: 0 !important;
   padding-top: 0 !important;
+}
+
+/* Keep the original desktop value outside the media query */
+.item-content {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 3fr !important; /* Title gets more space */
+  gap: 1.5rem !important;
+  width: 100% !important;
+  align-items: center !important;
+}
+
+/* Update mobile-specific value */
+@media (max-width: 768px) {
+  /* Add this rule to override the desktop value */
+  .item-content {
+    grid-template-columns: 2.1fr 1fr 3fr !important; /* More space for title on mobile */
+  }
+  
+  /* --- Update contact panel font sizes on mobile --- */
+  .artists-title {
+    font-size: 0.5rem !important; /* Reduce from 0.8rem */
+  }
+  
+  .artists-inner .artist {
+    font-size: 0.5rem !important; /* Reduce from 0.75rem */
+  }
+  
+  .panel-link {
+    font-size: 0.5rem !important; /* Reduce from 0.6rem */
+  }
+  
+  /* Adjust panel height for smaller text */
+  .artists-sidebar {
+    height: 40px !important; /* Slightly smaller height to match text */
+  }
+  
+  .artists-title {
+    padding: 0.8rem 1rem !important; /* Adjust padding for smaller text */
+  }
 }

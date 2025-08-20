@@ -823,11 +823,32 @@ body.entered .artists-drawer {
   /* --- LABEL section on mobile --- */
   #label .detail-content {
     grid-template-columns: 1fr; /* Single column layout */
+    align-items: center;
+    text-align: center;
   }
   
   #label .detail-image {
     max-width: 250px;
+    width: 100%;
     margin: 0 auto 2rem auto; /* Center the image with bottom margin */
+    display: block; /* Ensure proper block display for centering */
+  }
+  
+  /* Center all images in the label section */
+  #label img,
+  #label .detail-image img {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Make container for images center-aligned */
+  #label .detail-image-container,
+  #label figure {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: center;
   }
   
   /* More aggressive selector to ensure description is visible */
@@ -886,14 +907,36 @@ body.entered .artists-drawer {
     display: none;
   }
 
-  /* --- Remove blur effects on mobile --- */
-  .category:not(.active):hover {
-    filter: none; /* Remove blur effect on category titles */
+  /* --- COMPLETELY REMOVE ALL BLUR EFFECTS ON MOBILE --- */
+  /* Universal rule to override any blur on any element */
+  * {
+    filter: none !important;
   }
   
-  .artists-title:hover {
-    filter: none; /* Remove blur effect on bottom panel */
-    color: #333; /* Keep the color change on hover */
+  /* Specifically target elements that had blur applied */
+  .category,
+  .category:not(.active),
+  .category:hover,
+  .category:not(.active):hover,
+  .category.active,
+  .category.active:hover,
+  .artists-title,
+  .artists-title:hover,
+  .more-info,
+  .more-info:hover,
+  .more-info:active,
+  .panel-link,
+  .panel-link:hover,
+  .item-content,
+  .item-content:hover,
+  .logo-blur {
+    filter: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Prevent any JavaScript from applying blur via inline styles */
+  [style*="blur"] {
+    filter: none !important;
   }
 
   /* --- Hide title in label detail view --- */
@@ -968,4 +1011,128 @@ body.entered .artists-drawer {
     flex-grow: 1;
     overflow: hidden;
   }
+
+  /* --- Simplified Shows section for mobile --- */
+  #shows .item-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  #shows .item-date {
+    min-width: auto !important;
+    width: auto;
+    font-size: 0.55rem !important;
+    padding-right: 0.5rem;
+  }
+  
+  #shows .item-title {
+    font-size: 0.55rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Hide other elements in Shows section on mobile */
+  #shows .item-venue,
+  #shows .item-artists,
+  #shows .item-info > *:not(.item-title) {
+    display: none !important;
+  }
+
+  /* Adjust spacing in Shows section */
+  #shows .item {
+    padding: 0.5rem 0;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* --- Fix category title animations for mobile --- */
+  /* Active category: black and underlined */
+  .category.active {
+    color: #111 !important;
+    border-bottom-color: #ccc !important;
+    filter: none !important;
+  }
+  
+  /* Inactive categories: light grey, no blur, no underline */
+  .category:not(.active) {
+    color: #bbb !important;
+    border-bottom-color: transparent !important;
+    filter: none !important;
+  }
+  
+  /* Remove hover effects on categories */
+  .category:hover,
+  .category:not(.active):hover {
+    filter: none !important;
+    color: #bbb !important;
+  }
+  
+  /* Only active category gets darker on hover */
+  .category.active:hover {
+    color: #111 !important;
+  }
+  
+  /* Override any GSAP animations that might be applied via JavaScript */
+  .category {
+    transition: none !important;
+  }
+
+  /* --- Remove bold styling on mobile --- */
+  /* General removal of bold from common elements */
+  h1, h2, h3, h4, h5, h6,
+  .category,
+  .item-title,
+  .detail-header h2,
+  .artists-title,
+  strong, b {
+    font-weight: normal !important; /* Set all typically bold elements to normal weight */
+  }
+  
+  /* Categories in the navigation */
+  .category.active {
+    font-weight: normal !important;
+  }
+  
+  /* Listing titles */
+  .item-title {
+    font-weight: normal !important; /* Override the 600 weight set earlier */
+  }
+  
+  /* Detail view headings */
+  .detail-header h2 {
+    font-weight: normal !important; /* Override the 700 weight set earlier */
+  }
+  
+  /* Contact panel elements */
+  .artists-title,
+  .panel-link {
+    font-weight: normal !important;
+  }
+}
+
+/* --- COMPLETELY REMOVE ALL PANEL TITLES ON MOBILE --- */
+/* Hide detail headers in ALL sections */
+.detail-header,
+#label .detail-view .detail-header,
+#shows .detail-view .detail-header,
+.detail-view .detail-header {
+  display: none !important;
+}
+
+/* Override any other rules that might be showing the headers */
+.detail-header h2,
+#label .detail-view .detail-header h2,
+#shows .detail-view .detail-header h2 {
+  display: none !important;
+}
+
+/* Add extra top spacing to detail view content to compensate for removed header */
+.detail-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
